@@ -1,0 +1,104 @@
+<form class="create-form" [formGroup]="washerForm" novalidate (ngSubmit)="onSubmit(washerForm.value)">
+
+  <div class="row">
+    <mat-label>First name</mat-label>
+    <br>
+    <mat-form-field class="input-style">
+      <input matInput class="form-control" formControlName="fname">
+    </mat-form-field>
+    <ng-container *ngFor="let validation of validationMessages.fname">
+      <mat-error *ngIf="washerForm.get('fname').hasError(validation.type) && (washerForm.get('fname').dirty || washerForm.get('fname').touched)">{{validation.message}}</mat-error>
+    </ng-container>
+
+  </div>
+  <div>
+    <mat-label>Last name</mat-label>
+    <br>
+    <mat-form-field class="input-style">
+      <input matInput class="form-control" formControlName="lname">
+    </mat-form-field>
+    <ng-container *ngFor="let validation of validationMessages.lname">
+      <mat-error *ngIf="washerForm.get('lname').hasError(validation.type) && (washerForm.get('lname').dirty || washerForm.get('lname').touched)">{{validation.message}}</mat-error>
+    </ng-container>
+
+  </div>
+
+  <div>
+    <mat-label>Email</mat-label>
+    <br>
+    <mat-form-field class="input-style">
+      <input matInput class="form-control" formControlName="email">
+    </mat-form-field>
+    <ng-container *ngFor="let validation of validationMessages.email">
+      <mat-error *ngIf="washerForm.get('email').hasError(validation.type) && (washerForm.get('email').dirty || washerForm.get('email').touched)">{{validation.message}}</mat-error>
+    </ng-container>
+  </div>
+
+
+  <div>
+    <mat-label>Password</mat-label>
+    <br>
+    <mat-form-field class="input-style">
+      <input matInput class="form-control" formControlName="password">
+    </mat-form-field>
+    <ng-container *ngFor="let validation of validationMessages.password1">
+      <mat-error *ngIf="washerForm.get('password').hasError(validation.type) && (washerForm.get('password').dirty || washerForm.get('password').touched)">{{validation.message}}</mat-error>
+    </ng-container>
+  </div>
+
+
+  <div>
+    <mat-label>Age</mat-label>
+    <br>
+    <mat-form-field class="input-style">
+      <input matInput class="form-control" formControlName="age">
+    </mat-form-field>
+    <ng-container *ngFor="let validation of validationMessages.age">
+      <mat-error *ngIf="washerForm.get('age').hasError(validation.type) && (washerForm.get('age').dirty || washerForm.get('age').touched)">{{validation.message}}</mat-error>
+    </ng-container>
+  </div>
+
+
+  <div>
+    <mat-label>Zip Code</mat-label>
+    <br>
+    <mat-form-field class="input-style">
+      <input matInput class="form-control" formControlName="zipcode">
+    </mat-form-field>
+    <ng-container *ngFor="let validation of validationMessages.zipcode">
+      <mat-error *ngIf="washerForm.get('zipcode').hasError(validation.type) && (washerForm.get('zipcode').dirty || washerForm.get('zipcode').touched)">{{validation.message}}</mat-error>
+    </ng-container>
+  </div>
+
+
+  <div>
+    <mat-label>Employment Status</mat-label>
+    <br>
+    <mat-form-field class="input-style">
+      <select >
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+    </mat-form-field>
+    <ng-container *ngFor="let validation of validationMessages.zipcode">
+      <mat-error *ngIf="washerForm.get('zipcode').hasError(validation.type) && (washerForm.get('zipcode').dirty || washerForm.get('zipcode').touched)">{{validation.message}}</mat-error>
+    </ng-container>
+  </div>
+
+  <br>
+
+  <p>
+    By creating an account you agree to our <a href="#"
+                                               style="color: dodgerblue">Terms & Privacy</a>.
+  </p>
+
+  <br>
+  <div>
+    <div class="col-md-4">
+      <button mat-raised-button class="submit-button" color="primary" type="submit" [disabled]="!washerForm.valid">Subscribe</button>
+    </div>
+  </div>
+
+</form>

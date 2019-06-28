@@ -1,0 +1,39 @@
+
+<div>
+  <h3>Subscribe to our News Letter!</h3>
+</div>
+        <form class="create-form" [formGroup]="newsLetterTable" novalidate (ngSubmit)="onSubmit(newsLetterTable.value)">
+
+          <div class="row">
+            <mat-label>Name</mat-label>
+            <br>
+            <mat-form-field class="input-style">
+              <input matInput class="form-control" formControlName="name">
+            </mat-form-field>
+            <ng-container *ngFor="let validation of validationMessages.name">
+              <mat-error *ngIf="newsLetterTable.get('name').hasError(validation.type) && (newsLetterTable.get('name').dirty || newsLetterTable.get('name').touched)">{{validation.message}}</mat-error>
+            </ng-container>
+
+          </div>
+          <br>
+          <div>
+            <mat-label>Email</mat-label>
+            <br>
+            <mat-form-field class="input-style">
+              <input matInput class="form-control" formControlName="email">
+            </mat-form-field>
+            <ng-container *ngFor="let validation of validationMessages.email">
+              <mat-error *ngIf="newsLetterTable.get('email').hasError(validation.type) && (newsLetterTable.get('email').dirty || newsLetterTable.get('email').touched)">{{validation.message}}</mat-error>
+            </ng-container>
+          </div>
+
+          <br>
+          <div>
+            <div class="col-md-4">
+              <button mat-raised-button class="submit-button" color="primary" type="submit" [disabled]="!newsLetterTable.valid">Subscribe</button>
+            </div>
+          </div>
+
+        </form>
+
+

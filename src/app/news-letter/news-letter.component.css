@@ -1,0 +1,30 @@
+.input-style {
+  width: 300px;
+  padding: 15px;
+  margin: 8px 8px;
+  display: inline-block;
+  border: 2px solid #FF8300;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #FF8300;
+  color: black;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-family: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.20em;
+  border: none;
+}
+
+button:hover{
+  opacity: 0.8;
+}
+
+.mat-error {
+  font-size: 12px;
+}
+
+
