@@ -20,6 +20,7 @@ import {MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule } from
 import { NewsLetterComponent } from './news-letter/news-letter.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { WasherFormComponent } from './washer-form/washer-form.component';
+import { HelpComponent } from './help/help.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { WasherFormComponent } from './washer-form/washer-form.component';
     UserRegistrationComponent,
     PlaceOrderComponent,
     NewsLetterComponent,
-    WasherFormComponent
+    WasherFormComponent,
+    HelpComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase, 'suds-delivery'),

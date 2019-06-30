@@ -14,4 +14,7 @@ export class FirebaseService {
       email: value.email
     });
   }
+
+  getSubscribers() {
+  }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {UserServiceService} from 'src/app/services/user-service.service';
+import {User} from 'src/app/Models/user.model';
 
 @Component({
   selector: 'app-washer-form',
@@ -10,9 +12,16 @@ export class WasherFormComponent implements OnInit {
   validationMessages: any;
   selected: any;
 
-  constructor() { }
+  constructor(private userService: UserServiceService) { }
 
   ngOnInit() {
+    this.userService.getUsers().subscribe(data => {
+      this.policies = data.map(e => {
+        return {
+        
+        } as User;
+      })
+    });
   }
 
   onSubmit(value) {
