@@ -1,19 +1,19 @@
 @import "https://use.fontawesome.com/releases/v5.7.0/css/all.css";
 body {
-  /* background-image: url("images/WoodBackground copy.jpg"); */
+/* background-image: url("images/WoodBackground copy.jpg"); */
 
-  background-color: #fbfbfb;
+background-color: #fbfbfb;
 
 }
 
 
 .mainSlogan {
 
-  margin-top:30px;
-  margin-bottom:0px;
-  font-size: 25px;
-  font-family: inherit;
-  text-align: center;
+margin-top:30px;
+margin-bottom:0px;
+font-size: 25px;
+font-family: inherit;
+text-align: center;
 
 
 }
@@ -24,7 +24,7 @@ body {
 }
 
 .row {
-  margin-top: 0px;
+margin-top: 0px;
 
 }
 
@@ -36,11 +36,11 @@ body {
 }
 
 @media screen and (max-width: 825px) {
-  .column {
-    float: none;
-    width: 100%;
-    margin-bottom: 20px;
-  }
+.column {
+  float: none;
+  width: 100%;
+  margin-bottom: 20px;
+}
 
 
 }
@@ -54,53 +54,54 @@ body {
 
 
 .pic {
-  width:100%;
-  height:100%;
+	width:100%;
+	height:100%;
 }
 
 .picTwo {
-  width:100%;
-  height:100%;
+	width:100%;
+	height:100%;
 }
 
-a {
-  align-items: center;
-  text-decoration: none;
-  padding: .5em 10em;
-  box-shadow: 2px 2px 2px dimgray;
-}
+
 
 .NeedASud {
 
-  font-size: 20px;
-  letter-spacing: 2px;
-  margin: 0 0 0 0;
-  color: white;
-  background-color: #6bdff0;
-  font-family: "Times New Roman", Times, serif;
+    height: 50px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin: 0 0 0 0;
+    width: 100%;
+    color: white;
+    border: 2px solid #333333;
+    background-color: #6bdff0;
+    font-family: "Times New Roman", Times, serif;
 
 
 }
 
 .NeedASud:hover {
-  opacity: 0.8;
+	opacity: 0.8;
 
 }
 
 .BeASud {
 
-  font-size: 20px;
-  letter-spacing: 2px;
-  margin: 0 0 0 0;
-  color: white;
-  background-color: #FF8300;
-  font-family: "Times New Roman", Times, serif;
+ 	height: 50px;
+ 	font-size: 20px;
+    letter-spacing: 2px;
+    margin: 0 0 0 0;
+    width: 100%;
+    color: white;
+    border: 2px solid #333333;
+    background-color: #6bdff0;
+    font-family: "Times New Roman", Times, serif;
 
 
 }
 
 .BeASud:hover {
-  opacity: 0.8;
+	opacity: 0.8;
 
 }
 
@@ -108,44 +109,44 @@ a {
 
 .newsLetter {
 
-  position: relative;
-  border: 2px solid #6bdff0;
-  text-align: center;
-  margin-bottom: 100px;
-  margin-top: 50px;
-  margin-right: 10px;
-  margin-left: 10px;
-  padding: 0px;
+position: relative;
+border: 2px solid #6bdff0;
+text-align: center;
+margin-bottom: 300px;
+margin-top: 50px;
+margin-right: 10px;
+margin-left: 10px;
+padding: 0px;
 
 }
 
 
 
 @media screen and (max-width: 950px) {
-  .newsLetter {
+.newsLetter {
 
-    margin-bottom: 300px;
-    padding: 0px;
+margin-bottom: 300px;
+padding: 0px;
 
-  }
+}
 }
 
 @media screen and (max-width: 500px) {
-  .newsLetter {
+.newsLetter {
 
-    margin-bottom: 400px;
-    padding: 0px;
+margin-bottom: 400px;
+padding: 0px;
 
-  }
+}
 }
 
 @media screen and (max-width: 400px) {
-  .newsLetter {
+.newsLetter {
 
-    margin-bottom: 500px;
-    padding: 0px;
+margin-bottom: 500px;
+padding: 0px;
 
-  }
+}
 }
 
 
@@ -175,55 +176,56 @@ input[type=submit]:hover {
 }
 
 .features {
-  width: 100%;
-  height: auto;
-  background-color: #f2f2f2;
+	width: 100%;
+	height: auto;
+	background-color: #f2f2f2;
 
 
 }
 
 
 .featuresHeader {
-  padding-top: 20px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  text-align: center;
-  color: #FF8300;
-  font-family: inherit;
-  font-size: 45px;
-  text-shadow: 1px 1px black;
-  letter-spacing: 0.10em;
+	padding-top: 20px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	text-align: center;
+	color: #FF8300;
+	font-family: inherit;
+	font-size: 45px;
+	text-shadow: 1px 1px black;
+	letter-spacing: 0.10em;
 
 }
 
 .featuresHeaderTwo {
 
-  text-align: center;
-  margin-top: 0px;
-  padding-top: 5px;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-  color:#6bdff0;
-  text-shadow: 1px 1px black;
-  font-family: inherit;
-  font-size: 25px;
-  letter-spacing: 0.10em;
+	text-align: center;
+	margin-top: 0px;
+	padding-top: 5px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	color:#6bdff0; 
+	text-shadow: 1px 1px black; 
+	font-family: inherit;
+	font-size: 25px;
+	letter-spacing: 0.10em;
 
 
 }
 
 .headerFive {
 
-  margin: 0px;
-  padding: 0px;
-  font-size: 20px;
+margin: 0px;
+font-size: 20px;
+
+
 
 
 }
 
 .featureDiv {
 
-  height: 120px;
+height: 120px;
 
 }
 
@@ -235,10 +237,10 @@ input[type=submit]:hover {
   float: left;
   width: 50%;
   padding-top: 20px;
-  padding-right: 100px;
-  padding-left: 100px;
-
-
+  padding-right: 0px;
+  padding-left: 60px; 
+  
+  
 }
 
 /* Create two equal columns that floats next to each other */
@@ -246,29 +248,57 @@ input[type=submit]:hover {
   float: left;
   width: 50%;
   padding-top: 20px;
-  padding-right: 50px;
-  padding-left: 100px;
+  padding-right: 0px; 
+  padding-left: 60px; 
+  
+  
+}
+
+
+
+
+
+@media screen and (max-width: 920px) {
+
+/* Create two equal columns that floats next to each other */
+.featuresColumnOne {
+  
+ 	padding-left: 10px; 
+  
+  
+}
+
+/* Create two equal columns that floats next to each other */
+.featuresColumnTwo {
+  
+	padding-left: 0px; 
+  
+}
+
+
 
 }
 
 @media screen and (max-width: 825px) {
 
-  /* Create two equal columns that floats next to each other */
-  .featuresColumnOne {
-    float: left;
-    width: 100%;
+/* Create two equal columns that floats next to each other */
+.featuresColumnOne {
+  float: left;
+  width: 100%;
+  padding-left: 20px; 
+ 
+  
+  
+}
 
+/* Create two equal columns that floats next to each other */
+.featuresColumnTwo {
+  float: left;
+  width: 100%;
+  padding-left: 20px; 
 
-
-  }
-
-  /* Create two equal columns that floats next to each other */
-  .featuresColumnTwo {
-    float: left;
-    width: 100%;
-
-
-  }
+  
+}
 
 
 }
@@ -282,39 +312,49 @@ input[type=submit]:hover {
 
 .points {
 
-  margin-top: 5px;
-  padding: 0px;
+margin-top: 5px;
+padding: 0px;
+text-align: left;
 
 
 }
 
 .userHeader {
 
-  color:#6bdff0;
-  font-size: 20px;
-  text-shadow: 1px 1px black;
-  text-align: left;
-  letter-spacing: 0.10em;
+color:#6bdff0; 
+font-size: 20px;
+text-shadow: 1px 1px black; 
+text-align: left;
+letter-spacing: 0.10em;
 
 }
 
 .washerHeader {
 
-  color: #FF8300;
-  font-size: 20px;
-  text-shadow: 1px 1px black;
-  text-align: left;
-  letter-spacing: 0.10em;
+color: #FF8300;
+font-size: 20px;
+text-shadow: 1px 1px black; 
+text-align: left;
+letter-spacing: 0.10em;
 
 }
 
 .icons {
 
-  display: inline-block;
+float: left;
+margin-top: 10px;
+
 
 }
 
+.helloWorld {
 
+float: left;
+width: 350px;
+margin-left: 10px;
+
+
+}
 
 
 
@@ -346,50 +386,102 @@ input[type=submit]:hover {
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 825px) {
   .headerOne {
-    display: none;
+   	display: none;
   }
   .headerTwo {
     width: 100%;
     text-align: center;
     height: 270px;
   }
-
+  
   ul {
 
-    text-align: left;
-    display: inline-block;
+	text-align: left;
+	display: inline-block;
 
-  }
+	}
 }
 
 .mainHeaderSlogan {
 
-  font-size: 30px;
-  text-transform: uppercase;
-  color:#6bdff0;
-  text-shadow: 1px 1px gray;
-  margin-top: 10px;
-  margin-left: 22px;
+font-size: 35px; 
+text-transform: uppercase; 
+color:#6bdff0; 
+text-shadow: 1px 1px gray;
+margin-top: 10px;
+margin-left: 22px;
 
 
 }
 
 .unorderedList {
 
-  font-family: inherit;
-  font-size: 20px;
-  margin-left: 0px;
-  color: #FF8300;
-  text-shadow: 1px 1px gray;
+font-family: inherit;
+font-size: 20px;
+margin-left: 0px;
+color: #FF8300;
+text-shadow: 1px 1px gray;
 
 
 }
 
-.spanClass {
+.headerMessage {
 
-  display: inline;
-  font-size: 25px;
+width: 100%;
+background-color: #333333;
+margin-top: -20px;
+height: auto;
 
+
+}
+
+.headerM {
+
+font-size: 20px;
+padding-top: 10px;
+padding-bottom: 5px;
+text-align: center;
+color: white;
+
+
+}
+
+.secondM {
+
+font-size: 20px;
+color: #6bdff0; 
+float: none;
+text-decoration: none;
+
+
+
+}
+
+.registerDiv {
+text-align:center;
+padding-bottom: 20px;
+
+}
+
+
+.TrustandSafteyColumn {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.TrustandSafteyRow::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.TrustHeaders {
+
+text-align: center;
+font-type: bold;
+font-size: 20px;
 
 }
 
