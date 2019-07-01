@@ -19,11 +19,11 @@ export class UserServiceService {
       employmentStatus: value.employmentStatus,
       incomeRange: value.incomeRange,
       usertype: value.usertype,
-      availabilityDays: value.gender,
-      availabilityHours: value.gender,
-      dryerAgeRange: value.gender,
-      vehicleAccess: value.gender,
-      carry20Pounds: value.gender,
+      availabilityDays: value.availabilityDays,
+      availabilityHours: value.availabilityHours,
+      dryerAgeRange: value.dryerAgeRange,
+      vehicleAccess: value.vehicleAccess,
+      carry20Pounds: value.carry20Pounds
     });
   }
 
