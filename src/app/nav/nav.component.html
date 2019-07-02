@@ -1,16 +1,30 @@
+<body>
 <header>
   <div>
     <a routerLink="/" class="myButton">{{ title }}</a>
     <div class="topnav" id="myTopnav">
-      <a routerLink="/user" class="joinButton" style="color: #3b3b3b; text-decoration: none"> Join Suds</a>
+      <a routerLink="/user" class="joinButton" style="color: #3b3b3b; text-decoration: none;margin-top: 33px"> Join Suds</a>
       <a routerLink="/login" class="bubbles" style="text-decoration: none">Login</a>
-      <a routerLink="/washer" style="color:#FF8300;">Be A Washer</a>
-
+      <a routerLink="/washer" style="color:#6bdff0;">Become A Washer</a>
     </div>
 
   </div>
 
+
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
+
 </header>
+</body>
 
 
 
