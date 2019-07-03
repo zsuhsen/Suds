@@ -1,90 +1,152 @@
+
 <form class="create-form" [formGroup]="washerForm" novalidate (ngSubmit)="onSubmit(washerForm.value)">
 
-  <div class="row">
+  <div>
     <mat-label>First name</mat-label>
     <br>
-    <mat-form-field class="input-style">
+    <mat-form-field >
       <input matInput class="form-control" formControlName="fname">
     </mat-form-field>
-    <ng-container *ngFor="let validation of validationMessages.fname">
-      <mat-error *ngIf="washerForm.get('fname').hasError(validation.type) && (washerForm.get('fname').dirty || washerForm.get('fname').touched)">{{validation.message}}</mat-error>
-    </ng-container>
-
   </div>
   <div>
     <mat-label>Last name</mat-label>
     <br>
-    <mat-form-field class="input-style">
+    <mat-form-field >
       <input matInput class="form-control" formControlName="lname">
     </mat-form-field>
-    <ng-container *ngFor="let validation of validationMessages.lname">
-      <mat-error *ngIf="washerForm.get('lname').hasError(validation.type) && (washerForm.get('lname').dirty || washerForm.get('lname').touched)">{{validation.message}}</mat-error>
-    </ng-container>
-
   </div>
 
   <div>
     <mat-label>Email</mat-label>
     <br>
-    <mat-form-field class="input-style">
+    <mat-form-field>
       <input matInput class="form-control" formControlName="email">
     </mat-form-field>
-    <ng-container *ngFor="let validation of validationMessages.email">
-      <mat-error *ngIf="washerForm.get('email').hasError(validation.type) && (washerForm.get('email').dirty || washerForm.get('email').touched)">{{validation.message}}</mat-error>
-    </ng-container>
   </div>
 
 
   <div>
     <mat-label>Password</mat-label>
     <br>
-    <mat-form-field class="input-style">
+    <mat-form-field>
       <input matInput class="form-control" formControlName="password">
     </mat-form-field>
-    <ng-container *ngFor="let validation of validationMessages.password1">
-      <mat-error *ngIf="washerForm.get('password').hasError(validation.type) && (washerForm.get('password').dirty || washerForm.get('password').touched)">{{validation.message}}</mat-error>
-    </ng-container>
   </div>
 
 
   <div>
     <mat-label>Age</mat-label>
     <br>
-    <mat-form-field class="input-style">
+    <mat-form-field>
       <input matInput class="form-control" formControlName="age">
     </mat-form-field>
-    <ng-container *ngFor="let validation of validationMessages.age">
-      <mat-error *ngIf="washerForm.get('age').hasError(validation.type) && (washerForm.get('age').dirty || washerForm.get('age').touched)">{{validation.message}}</mat-error>
-    </ng-container>
   </div>
 
 
   <div>
     <mat-label>Zip Code</mat-label>
     <br>
-    <mat-form-field class="input-style">
+    <mat-form-field>
       <input matInput class="form-control" formControlName="zipcode">
     </mat-form-field>
-    <ng-container *ngFor="let validation of validationMessages.zipcode">
-      <mat-error *ngIf="washerForm.get('zipcode').hasError(validation.type) && (washerForm.get('zipcode').dirty || washerForm.get('zipcode').touched)">{{validation.message}}</mat-error>
-    </ng-container>
   </div>
+
+    <div>
+      <mat-label>What is your gender?</mat-label>
+      <br>
+      <mat-form-field>
+        <select formControlName="gender">
+          <option name="gender" value="male">Male</option>
+          <option name="gender" value="female">Female</option>
+          <option name="gender" value="other">Other</option>
+        </select>
+      </mat-form-field>
+    </div>
 
 
   <div>
-    <mat-label>Employment Status</mat-label>
+    <mat-label>What is your employment status?</mat-label>
     <br>
-    <mat-form-field class="input-style">
-      <select >
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
+    <mat-form-field>
+      <select formControlName="employmentStatus">
+        <option name="employmentStatus" value="full">Full Time</option>
+        <option name="employmentStatus" value="part">Part Time</option>
+        <option name="employmentStatus" value="student">Student</option>
+        <option name="employmentStatus" value="none">None</option>
       </select>
     </mat-form-field>
-    <ng-container *ngFor="let validation of validationMessages.zipcode">
-      <mat-error *ngIf="washerForm.get('zipcode').hasError(validation.type) && (washerForm.get('zipcode').dirty || washerForm.get('zipcode').touched)">{{validation.message}}</mat-error>
-    </ng-container>
+  </div>
+
+  <div>
+    <mat-label>What is your income?</mat-label>
+    <br>
+    <mat-form-field>
+      <select formControlName="incomeRange">
+        <option name="incomeRange" value="range1">$25,000 or less</option>
+        <option name="incomeRange" value="range2">$25,000 - $50,000</option>
+        <option name="incomeRange" value="range3">$50,000 - $100,000</option>
+        <option name="incomeRange" value="range4">$100,000 plus</option>
+      </select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-label>What is your Availability?</mat-label>
+    <br>
+    <mat-form-field>
+      <select formControlName="availabilityDays">
+        <option name="availabilityDays" value="1day">1 day a week</option>
+        <option name="availabilityDays" value="23days">2 to 3 days a week</option>
+        <option name="availabilityDays" value="45days">4 to 5 days a week</option>
+        <option name="availabilityDays" value="67days">6 to 7 days a week</option>
+      </select>
+    </mat-form-field>
+    <mat-form-field>
+      <select formControlName="availabilityHours">
+          <option name="availabilityHours" value="hrs02">0-2 hours</option>
+          <option name="availabilityHours" value="hrs35">3-5 hours</option>
+          <option name="availabilityHours" value="hrs68">6-8 hours</option>
+          <option name="availabilityHours" value="hrs9+">9+ hours</option>
+      </select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-label>How old is your washer and dryer?</mat-label>
+    <br>
+    <mat-form-field>
+      <select formControlName="dryerAgeRange">
+        <option name="dryerAgeRange" value="yr03">0-3 years</option>
+        <option name="dryerAgeRange" value="yr47">4-7 years</option>
+        <option name="dryerAgeRange" value="yr8+">8+ years</option>
+      </select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-label>Do you have access to a vehicle?</mat-label>
+    <br>
+    <mat-form-field>
+      <input type="radio" name="vehicleAccess" value="yes" formControlName="vehicleAccess"> Yes <br>
+      <input type="radio" name="vehicleAccess" value="no" formControlName="vehicleAccess"> No <br>
+      <input type="radio" name="vehicleAccess" value="bike" formControlName="vehicleAccess"> Bike? <br>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-label>Can you carry a minimum of 20 pounds?</mat-label>
+    <br>
+    <mat-form-field>
+      <input type="radio" value="yes" name="carry20Pounds" formControlName="carry20Pounds"> Yes
+      <input type="radio" value="no" name="carry20Pounds" formControlName="carry20Pounds"> No
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-label>Subscribe to our news letter?</mat-label>
+    <mat-form-field>
+      <input type="checkbox" value="subscribe" name="carry20Pounds" formControlName="newsletter">
+    </mat-form-field>
   </div>
 
   <br>
@@ -97,8 +159,7 @@
   <br>
   <div>
     <div class="col-md-4">
-      <button mat-raised-button class="submit-button" color="primary" type="submit" [disabled]="!washerForm.valid">Subscribe</button>
+      <button mat-raised-button class="submit-button" color="primary" type="submit" >Submit</button>
     </div>
   </div>
-
 </form>

@@ -9,24 +9,68 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class WasherFormComponent implements OnInit {
   washerForm: FormGroup;
-  validationMessages: any;
-  selected: any;
-
+  validationMessages: {
+    fname: [
+      { type: 'required', message: 'First name is required.' }
+      ],
+    lname: [
+      { type: 'required', message: 'Last name is required.' }
+      ],
+    email: [
+      { type: 'required', message: 'Email is required.' }
+      ],
+    password: [
+      { type: 'required', message: 'Password is required.' }
+      ],
+    age: [
+      { type: 'required', message: 'Age is required.' }
+      ],
+    zipcode: [
+      { type: 'required', message: 'Zipcode is required.' }
+      ]
+  };
   constructor(private fb: FormBuilder,
               private userService: UserServiceService) { }
 
   ngOnInit() {
+    this.createForm();
   }
   createForm() {
     this.washerForm = this.fb.group({
-      name: ['', Validators.required ],
-      email: ['', Validators.required ]
+      fname: [''],
+      lname: [''],
+      email: [''],
+      password: [''],
+      age: [''],
+      zipcode: [''],
+      gender: [''],
+      employmentStatus: [''],
+      incomeRange: [''],
+      availabilityDays: [''],
+      availabilityHours: [''],
+      dryerAgeRange: [''],
+      vehicleAccess: [''],
+      carry20Pounds: [''],
+      newsletter: ['']
     });
   }
   resetFields() {
     this.washerForm = this.fb.group({
-      name: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required)
+      fname: new FormControl(''),
+      lname: new FormControl(''),
+      email: new FormControl(''),
+      password: new FormControl(''),
+      age: new FormControl(''),
+      zipcode: new FormControl(''),
+      gender: new FormControl(''),
+      employmentStatus: new FormControl(''),
+      incomeRange: new FormControl(''),
+      availabilityDays: new FormControl(''),
+      availabilityHours: new FormControl(''),
+      dryerAgeRange: new FormControl(''),
+      vehicleAccess: new FormControl(''),
+      carry20Pounds: new FormControl(''),
+      newsletter: new FormControl('')
     });
   }
 
