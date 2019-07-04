@@ -8,23 +8,24 @@ import {AngularFirestore} from '@angular/fire/firestore';
 export class UserServiceService {
 
   constructor(public db: AngularFirestore) {}
-
-  createWasher(value) {
+    createWasher(value) {
       return this.db.collection('users').add({
-      fname: value.fname,
-      lname: value.lname,
-      email: value.email,
-      age: value.age,
-      gender: value.gender,
-      employmentStatus: value.employmentStatus,
-      incomeRange: value.incomeRange,
-      usertype: value.usertype,
-      availabilityDays: value.availabilityDays,
-      availabilityHours: value.availabilityHours,
-      dryerAgeRange: value.dryerAgeRange,
-      vehicleAccess: value.vehicleAccess,
-      carry20Pounds: value.carry20Pounds
-    });
-  }
-
+        fname: value.fname,
+        lname: value.lname,
+        email: value.email,
+        password: value.password,
+        age: value.age,
+        zipcode: value.zipcode,
+        gender: value.gender,
+        employmentStatus: value.employmentStatus,
+        incomeRange: value.incomeRange,
+        availabilityDays: value.availabilityDays,
+        availabilityHours: value.availabilityHours,
+        dryerAgeRange: value.dryerAgeRange,
+        vehicleAccess: value.vehicleAccess,
+        carry20Pounds: value.carry20Pounds,
+        newsletter: value.newsletter,
+        userType: 'washer' /** we want this to show what type of user they are */
+      });
+    }
 }

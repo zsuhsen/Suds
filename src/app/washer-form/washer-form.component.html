@@ -1,69 +1,91 @@
 
 <form class="create-form" [formGroup]="washerForm" novalidate (ngSubmit)="onSubmit(washerForm.value)">
 
-  <div>
+  <div class="row">
     <mat-label>First name</mat-label>
     <br>
-    <mat-form-field >
+    <mat-form-field class="input-style">
       <input matInput class="form-control" formControlName="fname">
     </mat-form-field>
+    <ng-container *ngFor="let validation of validationMessages.fname">
+      <mat-error *ngIf="washerForm.get('fname').hasError(validation.type) && (washerForm.get('fname').dirty || washerForm.get('fname').touched)">{{validation.message}}</mat-error>
+    </ng-container>
+
   </div>
-  <div>
+  <br>
+  <div class="row">
     <mat-label>Last name</mat-label>
     <br>
-    <mat-form-field >
+    <mat-form-field class="input-style">
       <input matInput class="form-control" formControlName="lname">
     </mat-form-field>
-  </div>
+    <ng-container *ngFor="let validation of validationMessages.lname">
+      <mat-error *ngIf="washerForm.get('lname').hasError(validation.type) && (washerForm.get('lname').dirty || washerForm.get('lname').touched)">{{validation.message}}</mat-error>
+    </ng-container>
 
+  </div>
+  <br>
   <div>
     <mat-label>Email</mat-label>
     <br>
-    <mat-form-field>
+    <mat-form-field class="input-style">
       <input matInput class="form-control" formControlName="email">
     </mat-form-field>
+    <ng-container *ngFor="let validation of validationMessages.email">
+      <mat-error *ngIf="washerForm.get('email').hasError(validation.type) && (washerForm.get('email').dirty || washerForm.get('email').touched)">{{validation.message}}</mat-error>
+    </ng-container>
   </div>
 
-
+  <br>
   <div>
-    <mat-label>Password</mat-label>
+    <mat-label>Input a password</mat-label>
     <br>
-    <mat-form-field>
+    <mat-form-field class="input-style">
       <input matInput class="form-control" formControlName="password">
     </mat-form-field>
+    <ng-container *ngFor="let validation of validationMessages.password">
+      <mat-error *ngIf="washerForm.get('password').hasError(validation.type) && (washerForm.get('password').dirty || washerForm.get('password').touched)">{{validation.message}}</mat-error>
+    </ng-container>
   </div>
 
-
+  <br>
   <div>
-    <mat-label>Age</mat-label>
+    <mat-label>What is your age</mat-label>
     <br>
-    <mat-form-field>
+    <mat-form-field class="input-style">
       <input matInput class="form-control" formControlName="age">
     </mat-form-field>
+    <ng-container *ngFor="let validation of validationMessages.age">
+      <mat-error *ngIf="washerForm.get('age').hasError(validation.type) && (washerForm.get('age').dirty || washerForm.get('age').touched)">{{validation.message}}</mat-error>
+    </ng-container>
   </div>
 
-
+  <br>
   <div>
-    <mat-label>Zip Code</mat-label>
+    <mat-label>What is your zipcode</mat-label>
+    <br>
+    <mat-form-field class="input-style">
+      <input matInput class="form-control" formControlName="zipcode">
+    </mat-form-field>
+    <ng-container *ngFor="let validation of validationMessages.zipcode">
+      <mat-error *ngIf="washerForm.get('zipcode').hasError(validation.type) && (washerForm.get('zipcode').dirty || washerForm.get('zipcode').touched)">{{validation.message}}</mat-error>
+    </ng-container>
+  </div>
+
+  <br>
+  <div>
+    <mat-label>What is your gender?</mat-label>
     <br>
     <mat-form-field>
-      <input matInput class="form-control" formControlName="zipcode">
+      <select formControlName="gender">
+        <option name="gender" value="male">Male</option>
+        <option name="gender" value="female">Female</option>
+        <option name="gender" value="other">Other</option>
+      </select>
     </mat-form-field>
   </div>
 
-    <div>
-      <mat-label>What is your gender?</mat-label>
-      <br>
-      <mat-form-field>
-        <select formControlName="gender">
-          <option name="gender" value="male">Male</option>
-          <option name="gender" value="female">Female</option>
-          <option name="gender" value="other">Other</option>
-        </select>
-      </mat-form-field>
-    </div>
-
-
+  <br>
   <div>
     <mat-label>What is your employment status?</mat-label>
     <br>
@@ -77,6 +99,8 @@
     </mat-form-field>
   </div>
 
+  <br>
+
   <div>
     <mat-label>What is your income?</mat-label>
     <br>
@@ -89,7 +113,7 @@
       </select>
     </mat-form-field>
   </div>
-
+  <br>
   <div>
     <mat-label>What is your Availability?</mat-label>
     <br>
@@ -103,14 +127,14 @@
     </mat-form-field>
     <mat-form-field>
       <select formControlName="availabilityHours">
-          <option name="availabilityHours" value="hrs02">0-2 hours</option>
-          <option name="availabilityHours" value="hrs35">3-5 hours</option>
-          <option name="availabilityHours" value="hrs68">6-8 hours</option>
-          <option name="availabilityHours" value="hrs9+">9+ hours</option>
+        <option name="availabilityHours" value="hrs02">0-2 hours</option>
+        <option name="availabilityHours" value="hrs35">3-5 hours</option>
+        <option name="availabilityHours" value="hrs68">6-8 hours</option>
+        <option name="availabilityHours" value="hrs9+">9+ hours</option>
       </select>
     </mat-form-field>
   </div>
-
+  <br>
   <div>
     <mat-label>How old is your washer and dryer?</mat-label>
     <br>
@@ -122,7 +146,7 @@
       </select>
     </mat-form-field>
   </div>
-
+  <br>
   <div>
     <mat-label>Do you have access to a vehicle?</mat-label>
     <br>
@@ -132,7 +156,7 @@
       <input type="radio" name="vehicleAccess" value="bike" formControlName="vehicleAccess"> Bike? <br>
     </mat-form-field>
   </div>
-
+  <br>
   <div>
     <mat-label>Can you carry a minimum of 20 pounds?</mat-label>
     <br>
@@ -141,7 +165,7 @@
       <input type="radio" value="no" name="carry20Pounds" formControlName="carry20Pounds"> No
     </mat-form-field>
   </div>
-
+  <br>
   <div>
     <mat-label>Subscribe to our news letter?</mat-label>
     <mat-form-field>
@@ -150,16 +174,10 @@
   </div>
 
   <br>
-
-  <p>
-    By creating an account you agree to our <a href="#"
-                                               style="color: dodgerblue">Terms & Privacy</a>.
-  </p>
-
-  <br>
   <div>
     <div class="col-md-4">
-      <button mat-raised-button class="submit-button" color="primary" type="submit" >Submit</button>
+      <button mat-raised-button class="submit-button" color="primary" type="submit" [disabled]="!washerForm.valid">Submit</button>
     </div>
   </div>
+
 </form>
