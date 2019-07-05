@@ -28,4 +28,7 @@ export class UserServiceService {
         userType: 'washer' /** we want this to show what type of user they are */
       });
     }
+    createUser(value) {}
+    updateUser() {}
+    deleteUser() {}
 }
