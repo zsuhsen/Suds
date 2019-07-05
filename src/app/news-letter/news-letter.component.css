@@ -1,17 +1,99 @@
+
+.newsLetterHeader {
+
+  color: white;
+  text-align: center;
+
+}
+
+.newsLetterLayout {
+
+  width: 100%;
+  margin: 0 0 0 8%;
+}
+
+
+
+
+.newsLetterEmail {
+
+   width: 33%;
+   float: left;
+    margin-top: -18px;
+
+
+ }
+
+.newsLetterName {
+
+  width: 33%;
+  float: left;
+
+
+}
+
+.newsLetterSubscribe {
+  
+  width: 33%;
+  text-align: left;
+  float: left;
+  margin-top: -11px;
+  
+  
+}
+
+@media screen and (max-width: 1030px) {
+
+
+  .newsLetterLayout {
+
+    display: block;
+    margin: 0 0 0 0;
+  }
+
+  .newsLetterEmail {
+
+    width: 100%;
+    float: none;
+    margin-top: 0px;
+
+
+
+  }
+
+  .newsLetterName {
+
+    width: 100%;
+    float: none;
+
+
+  }
+
+  .newsLetterSubscribe {
+
+    width: 100%;
+    text-align: center;
+    float: none;
+    margin-top: 0px;
+
+
+  }
+
+
+}
+
 .input-style {
   width: 300px;
   padding: 15px;
-  margin: 8px 8px;
-  display: inline-block;
-  border: 2px solid #FF8300;
-  box-sizing: border-box;
+  background-color: white;
+  border: 2px solid #6bdff0;
 }
 
 button {
-  background-color: #FF8300;
-  color: black;
+  background-color: #6bdff0;
+  color: white;
   margin-bottom: 5px;
-  font-size: 15px;
+  font-size: 17px;
   font-family: inherit;
   font-weight: 600;
   text-transform: uppercase;

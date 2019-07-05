@@ -1,11 +1,13 @@
 
+
 <div>
-  <h3>Subscribe to our News Letter!</h3>
+  <h3 class="newsLetterHeader">Subscribe to our News Letter!</h3>
 </div>
         <form class="create-form" [formGroup]="newsLetterTable" novalidate (ngSubmit)="onSubmit(newsLetterTable.value)">
 
-          <div class="row">
-            <mat-label>Name</mat-label>
+          <div class="newsLetterLayout">
+            <div class="newsLetterName">
+            <mat-label style="color: white;">Name</mat-label>
             <br>
             <mat-form-field class="input-style">
               <input matInput class="form-control" formControlName="name">
@@ -14,10 +16,12 @@
               <mat-error *ngIf="newsLetterTable.get('name').hasError(validation.type) && (newsLetterTable.get('name').dirty || newsLetterTable.get('name').touched)">{{validation.message}}</mat-error>
             </ng-container>
 
-          </div>
+            </div>
+
+
           <br>
-          <div>
-            <mat-label>Email</mat-label>
+          <div class="newsLetterEmail">
+          <mat-label style="color: white;">Email</mat-label>
             <br>
             <mat-form-field class="input-style">
               <input matInput class="form-control" formControlName="email">
@@ -27,11 +31,13 @@
             </ng-container>
           </div>
 
+
           <br>
-          <div>
+          <div class="newsLetterSubscribe">
             <div class="col-md-4">
               <button mat-raised-button class="submit-button" color="primary" type="submit" [disabled]="!newsLetterTable.valid">Subscribe</button>
             </div>
+          </div>
           </div>
 
         </form>

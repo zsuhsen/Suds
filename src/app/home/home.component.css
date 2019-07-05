@@ -4,6 +4,7 @@ body {
 
 background-color: #fbfbfb;
   margin: 0px;
+  padding: 0px;
 
 }
 
@@ -78,14 +79,48 @@ margin-top: 0px;
 
 .SudsMapHeader {
 
-  color: #6bdff0;
+  color: white;
+  font-family: inherit;
   text-align: center;
   font-size: 35px;
-  text-transform: uppercase;
   padding-top: 15px;
   padding-bottom: 15px;
   margin: 0px;
 
+}
+
+.column {
+  position: relative;
+  width: 50%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #6bdff0;
+}
+
+.column:hover .overlay {
+  opacity: 0.9;
+}
+
+.text {
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 
@@ -110,81 +145,36 @@ margin-top: 0px;
 }
 
 
-.pic {
-	width:100%;
-	height:100%;
-  margin: 0px;
-}
-
-.picTwo {
-	width:100%;
-	height:100%;
-  margin: 0px;
-}
-
-
 
 .NeedASud {
 
     height: auto;
     min-height: 56px;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    margin: 0 0 -2% 10%;
+    width: 80%;
     font-size: 20px;
     letter-spacing: 2px;
-    width: 100%;
     color: white;
+    border: 1px solid black;
     background-color: #6bdff0;
     font-family: "Times New Roman", Times, serif;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
 
 
 }
 
 .NeedASud:hover {
-	opacity: 0.8;
+  font-size: 21px;
+  padding: 14px;
 
 }
-
-.BeASud {
-
-  height: auto;
-  min-height: 56px;
-  font-size: 20px;
-  letter-spacing: 2px;
-  width: 100%;
-  background-color: #6bdff0;
-  color: white;
-  font-family: "Times New Roman", Times, serif;
-
-
-}
-
-.BeASud:hover {
-	opacity: 0.8;
-
-}
-
-
-
-.newsLetter {
-
-position: relative;
-border: 2px solid #6bdff0;
-text-align: center;
-margin-bottom: 0px;
-margin-top: 200px;
-padding: 0px;
-
-}
-
-
-input[type=text], input[type=submit] {
-  width: 300px;
-  padding: 15px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 2px solid #FF8300;
-  box-sizing: border-box;
-}
-
 
 
 input[type=submit] {
@@ -206,22 +196,21 @@ input[type=submit]:hover {
 	width: 100%;
 	height: auto;
 	background-color: #f2f2f2;
-  margin-top: -30px;
+  margin-top: -35px;
 
 
 }
 
 
 .featuresHeader {
-	padding-top: 20px;
+	padding-top: 30px;
 	margin-bottom: 0px;
 	padding-bottom: 0px;
 	text-align: center;
 	color: black;
-	font-family: inherit;
-	font-size: 35px;
-	text-shadow: 1px 1px black;
-	letter-spacing: 0.10em;
+  font-family: inherit;
+  font-size: 35px;
+	text-shadow: 1px 1px gray;
 
 }
 
@@ -455,8 +444,8 @@ height: auto;
 .headerM {
 
 font-size: 20px;
-padding-top: 10px;
-padding-bottom: 5px;
+padding-top: 15px;
+padding-bottom: 2px;
 text-align: center;
 color: white;
 
@@ -480,24 +469,64 @@ padding-bottom: 20px;
 
 }
 
-.TrustandSafteyRow {
-  margin-top: 50px;
+.backDrop {
+
+  background-color: #6bdff0;
+  height: 250px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+
 
 }
 
 
 .TrustandSafteyColumn {
   float: left;
-  width: 33.33%;
+  width: 33.3%;
   padding: 5px;
   text-align: center;
 }
 
-/* Clearfix (clear floats) */
-.TrustandSafteyRow::after {
-  content: "";
-  clear: both;
-  display: table;
+.TrustSentence {
+
+  padding-right: 50px;
+  padding-left: 50px;
+  color: gray;
+
+}
+
+
+@media screen and (max-width: 1030px) {
+
+  .TrustandSafteyColumn {
+    float: none;
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+  }
+
+
+  .backDrop {
+
+    background-color: #6bdff0;
+    height: 1150px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+
+
+  }
+
+
+  .TrustSentence {
+
+    color: white;
+
+  }
+
+
+
 }
 
 .TrustHeaders {
@@ -509,13 +538,6 @@ font-size: 25px;
 
 }
 
-.TrustSentence {
-
-  padding-right: 50px;
-  padding-left: 50px;
-  color: gray;
-
-}
 
 .SafteyImage {
 
@@ -531,6 +553,7 @@ font-size: 25px;
 .TrustIsKey {
 
   text-align: center;
+  padding-bottom: 20px;
   
 }
 
@@ -552,14 +575,38 @@ font-size: 25px;
 
 }
 
-.backDrop {
 
-  background-color: #6bdff0;
-  height: 300px;
+
+.newsLetter {
+
+  height: 200px;
+
+  border: 2px solid #6bdff0;
+  background-color: #333333;
+  margin-top: 250px;
+  margin-bottom: -35px;
+  padding: 0px;
   width: 100%;
-  
+
 
 }
+
+@media screen and (max-width: 1030px) {
+
+  .newsLetter {
+
+    height: 300px;
+    text-align: center;
+    margin-top: 0px;
+
+
+  }
+
+
+}
+
+
+
 
 .RegisterToday {
 
