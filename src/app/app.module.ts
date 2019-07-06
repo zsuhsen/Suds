@@ -21,6 +21,7 @@ import { NewsLetterComponent } from './news-letter/news-letter.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { WasherFormComponent } from './washer-form/washer-form.component';
 import { HelpComponent } from './help/help.component';
+import { UserFormComponent } from './user-form/user-form.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { HelpComponent } from './help/help.component';
     PlaceOrderComponent,
     NewsLetterComponent,
     WasherFormComponent,
-    HelpComponent
+    HelpComponent,
+    UserFormComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase, 'suds-delivery'),
