@@ -5,100 +5,60 @@
 }
 
 
-.container {
-
-  margin-right: 50px;
-  margin-left: 50px;
-
-
-}
-
-input {
-  border: solid 1px
-}
-
-.genderAndemployment {
-
-  margin-bottom: 100px;
-
-
-}
-
-.gender {
-
-  float: left;
-  margin-right: 20%;
-}
-
-.employment {
-
-  float: left;
-}
-
-
-.income {
-
-  float: right;
-
-}
-
-.availHours {
-  margin-bottom: 270px;
-
-}
-
-
-.availability {
-
-  float: left;
-}
-
-.hours {
-  float: right;
-}
-
-.AgeAndVehicle {
-
-  margin-bottom: 400px;
-
-}
-
-.washerAge {
-
-  float: left;
-
-}
-
-.vehicle {
-
-  float: right;
-
-}
-
 * {
   box-sizing: border-box
 }
 
+/* Add padding to containers */
+.container {
+  margin: 0px;
+}
+
 /* Full-width input fields */
 input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
+  width: 200px;
+  padding: 13px;
+  font-size: 12px;
+  margin: 5px 0 22px 0;
+  border-radius: 10px;
+  display: block;
   border: none;
-  background: lightgray;
+  background: white;
+}
+
+input[type=Agetext] {
+  width: 50px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border-radius: 10px;
+  display: block;
+  border: none;
+  background: white;
+}
+
+input[type=Ziptext] {
+  width: 75px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border-radius: 10px;
+  display: block;
+  border: none;
+  background: white;
+}
+
+
+.radioInput {
+
+  color: white;
+  background-color: white;
+  text-decoration: white;
+
+
 }
 
 input[type=text]:focus, input[type=password]:focus {
   background-color: lightblue;
   outline: none;
-}
-
-hr {
-  color: black;
-  border: 1px solid;
-  margin-bottom: 25px;
-  margin-top: 50px;
-  border: 1px solid #f1f1f1;
-  border: 1px solid;
 }
 
 /* Set a style for all buttons */
@@ -126,14 +86,11 @@ button:hover {
 /* Float cancel and signup buttons and add an equal width */
 .cancelbtn, .signupbtn {
   float: left;
-  width: 100%;
+  width: 60%;
+  margin: 2% 0 2% 20%;
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
-}
-
-/* Add padding to container elements */
-.container {
-  padding: 16px;
+  border-radius: 10px;
 }
 
 /* Clear floats */
@@ -146,17 +103,17 @@ button:hover {
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
   .cancelbtn, .signupbtn {
-    width: 100%;
+    width: 80%;
   }
 }
 
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;
-  width: 50%;
-  padding: 10px;
-  height: 200px; /* Should be removed. Only for demonstration */
-  text-align: center;
+  width: 100%;
+  padding-left: 10px;
+  height: auto; /* Should be removed. Only for demonstration */
+  background-color: #333333;
 }
 
 /* Clear floats after the columns */
@@ -166,13 +123,352 @@ button:hover {
   clear: both;
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
-}
-
 .clear {
   clear: both;
+}
+
+mat-label {
+
+  color: white;
+
+
+}
+
+.Names {
+
+  margin-top: 50px;
+  width: 100%;
+  background: #333333;
+
+}
+
+.firstName {
+
+  width: 20%;
+  float: left;
+}
+
+.lastName {
+
+  width: 20%;
+  float: left;
+}
+
+.email {
+
+  width: 20%;
+  float: left;
+}
+
+.password {
+
+  float: left;
+  width: 20%;
+
+}
+
+.Age {
+
+  float: left;
+  width: 8%;
+}
+
+.zipCode {
+
+  float: left;
+  width: 12%;
+
+}
+
+@media screen and (max-width: 980px) {
+
+
+  .firstName {
+
+    width: 25%;
+    float: left;
+  }
+
+  .lastName {
+
+    width: 25%;
+    float: left;
+  }
+
+  .email {
+
+    width: 25%;
+    float: left;
+  }
+
+  .password {
+
+    float: left;
+    width: 25%;
+
+  }
+
+
+  .Age {
+
+    float: left;
+    width: 100%;
+  }
+
+  .zipCode {
+
+    float: left;
+    width: 100%;
+
+  }
+
+}
+
+@media screen and (max-width: 790px) {
+
+
+  .firstName {
+
+    width: 33.3%;
+    float: left;
+  }
+
+  .lastName {
+
+    width: 33.3%;
+    float: left;
+  }
+
+  .email {
+
+    width: 33.3%;
+    float: left;
+  }
+
+  .password {
+
+    float: left;
+    width: 100%;
+
+  }
+
+
+
+
+}
+
+@media screen and (max-width: 610px) {
+
+
+
+  .firstName {
+
+    width: 50%;
+    float: left;
+  }
+
+  .lastName {
+
+    width: 50%;
+    float: left;
+  }
+
+  .email {
+
+    width: 100%;
+    float: left;
+  }
+
+
+
+
+
+}
+
+hr {
+
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.optionalQuestion {
+
+  width: 100%;
+  margin-top: 20px;
+
+
+
+}
+
+.gender {
+
+  float: left;
+  width: 10%;
+  padding-top: 10px;
+  padding-bottom: 20px;
+
+}
+
+.employment {
+
+  float: left;
+  width: 14%;
+  padding-top: 10px;
+  padding-bottom: 20px;
+
+
+}
+
+.question1 {
+
+  float: left;
+  width: 24%;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.question2 {
+
+  float: left;
+  width: 20%;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.question3 {
+
+  float: left;
+  width: 32%;
+  padding-top: 10px;
+  padding-bottom: 20px;
+
+}
+
+
+@media screen and (max-width: 1150px) {
+
+
+  .gender {
+
+    float: left;
+    width: 10%;
+
+  }
+
+  .employment {
+
+    float: left;
+    width: 20%;
+
+
+  }
+
+  .question1 {
+
+    float: left;
+    width: 35%;
+  }
+
+  .question2 {
+
+    float: left;
+    width: 35%;
+  }
+
+  .question3 {
+
+    float: left;
+    width: 100%;
+
+  }
+
+
+
+
+}
+
+
+@media screen and (max-width: 900px) {
+
+
+  .gender {
+
+    float: left;
+    width: 20%;
+
+  }
+
+  .employment {
+
+    float: left;
+    width: 30%;
+
+
+  }
+
+  .question1 {
+
+    float: left;
+    width: 50%;
+  }
+
+  .question2 {
+
+    float: left;
+    width: 100%;
+  }
+
+}
+
+
+@media screen and (max-width: 550px) {
+
+
+  .gender {
+
+    float: left;
+    width: 50%;
+
+  }
+
+  .employment {
+
+    float: left;
+    width: 50%;
+
+
+  }
+
+  .question1 {
+
+    float: left;
+    width: 100%;
+  }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+.NewsLetterAndTerms {
+
+
+  margin-top: 130px;
+  margin-left: 0px;
+  padding: 0px;
+  display: block;
+
+
+
 }
