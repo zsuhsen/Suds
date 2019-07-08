@@ -1,3 +1,30 @@
-<p>
-  place-order works!
-</p>
+<div class="row">
+  <div class="column">
+  <h1>Washers</h1>
+    <hr>
+
+      <div *ngFor="let item of items" >
+        <div>
+          <table style="width: 75%">
+            <caption>{{capitalizeFirstLetter(item.payload.doc.data().fname)}} {{capitalizeFirstLetter(item.payload.doc.data().lname)}}</caption>
+            <tr>
+              <th>ZipCode</th>
+              <th>Age</th>
+              <th>Rating</th>
+            </tr>
+            <tr>
+              <td>{{item.payload.doc.data().zipcode}}</td>
+              <td>{{item.payload.doc.data().age}}</td>
+              <td>5 stars</td>
+              <td style="border: none"> <button type="button" href="">Place Order</button> </td>
+            </tr>
+          </table>
+        </div>
+
+        <hr>
+      </div>
+
+
+
+  </div>
+</div>

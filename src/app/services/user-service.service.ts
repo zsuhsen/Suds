@@ -48,6 +48,8 @@ export class UserServiceService {
     }
     updateUser() {}
     deleteUser() {}
-    getWashers() {}
+    getWashers() {
+      return this.db.collection('users', ref => ref.where('userType', '==', 'washer')).snapshotChanges();
+    }
     getUsers() {}
 }

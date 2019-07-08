@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserServiceService} from '../services/user-service.service';
 
 @Component({
   selector: 'app-place-order',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaceOrderComponent implements OnInit {
 
-  constructor() { }
+  items: Array<any>;
+  constructor(public us: UserServiceService) { }
 
   ngOnInit() {
+    this.getWasherData();
+  }
+  getWasherData() {
+    this.us.getWashers().subscribe(result => {
+      this.items = result;
+    });
+  }
+  capitalizeFirstLetter(value) {
+    return value.charAt(0).toUpperCase() + value.slice(1);
   }
 
 }
