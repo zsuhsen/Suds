@@ -28,7 +28,26 @@ export class UserServiceService {
         userType: 'washer' /** we want this to show what type of user they are */
       });
     }
-    createUser(value) {}
+    createUser(value) {
+      return this.db.collection('users').add({
+        fname: value.fname,
+        lname: value.lname,
+        email: value.email,
+        password: value.password,
+        age: value.age,
+        zipcode: value.zipcode,
+        gender: value.gender,
+        employmentStatus: value.employmentStatus,
+        incomeRange: value.incomeRange,
+        laundryPlace: value.laundryPlace,
+        laundryFrequency: value.laundryFrequency,
+        laundryType: value.laundryType,
+        newsletter: value.newsletter,
+        userType: 'user'
+      });
+    }
     updateUser() {}
     deleteUser() {}
+    getWashers() {}
+    getUsers() {}
 }

@@ -80,7 +80,7 @@ export class WasherFormComponent implements OnInit {
     this.us.createWasher(value).then(
       res => {
         this.resetFields();
-        this.router.navigate(['/login']);
+        this.router.navigate(['/']);
       }
     );
   }

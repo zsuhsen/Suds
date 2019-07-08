@@ -6,128 +6,190 @@
 
       <div class="Names">
 
-        <div class="firstName">
-          <label for="fname"><b>First Name</b></label>
-          <input type="text" placeholder="Enter First Name" name="fName" required>
-        </div>
+        <form class="create-form" [formGroup]="userForm" novalidate (ngSubmit)="onSubmit(userForm.value)">
 
-        <div class="lastName">
-          <label for="lname"><b>Last Name</b></label>
-          <input type="text" placeholder="Enter Last Name" name="lName" required>
-        </div>
+          <div class="Names">
+
+            <div class="firstName">
+              <mat-label>First name</mat-label>
+              <br>
+              <mat-form-field class="input-style">
+                <input matInput type="text" class="form-control" placeholder="Enter First Name" formControlName="fname">
+              </mat-form-field>
+              <ng-container *ngFor="let validation of validationMessages.fname">
+                <mat-error *ngIf="userForm.get('fname').hasError(validation.type) && (userForm.get('fname').dirty || userForm.get('fname').touched)">{{validation.message}}</mat-error>
+              </ng-container>
+
+            </div>
+            <div class="lastName">
+              <mat-label>Last name</mat-label>
+              <br>
+              <mat-form-field class="input-style">
+                <input matInput type="text" class="form-control" placeholder="Enter Last Name" formControlName="lname">
+              </mat-form-field>
+              <ng-container *ngFor="let validation of validationMessages.lname">
+                <mat-error *ngIf="userForm.get('lname').hasError(validation.type) && (userForm.get('lname').dirty || userForm.get('lname').touched)">{{validation.message}}</mat-error>
+              </ng-container>
+
+            </div>
+            <div class="email">
+              <mat-label>Email</mat-label>
+              <br>
+              <mat-form-field class="input-style">
+                <input matInput type="text" class="form-control"  placeholder="Enter Email" formControlName="email">
+              </mat-form-field>
+              <ng-container *ngFor="let validation of validationMessages.email">
+                <mat-error *ngIf="userForm.get('email').hasError(validation.type) && (userForm.get('email').dirty || userForm.get('email').touched)">{{validation.message}}</mat-error>
+              </ng-container>
+            </div>
+            <div class="password">
+              <mat-label>Password</mat-label>
+              <br>
+              <mat-form-field class="input-style">
+                <input matInput type="password" class="form-control" placeholder="Enter Password" formControlName="password">
+              </mat-form-field>
+              <ng-container *ngFor="let validation of validationMessages.password">
+                <mat-error *ngIf="userForm.get('password').hasError(validation.type) && (userForm.get('password').dirty || userForm.get('password').touched)">{{validation.message}}</mat-error>
+              </ng-container>
+            </div>
+
+            <div class="zipCode">
+              <mat-label>Zipcode</mat-label>
+              <br>
+              <mat-form-field class="input-style">
+                <input matInput type="Ziptext" class="form-control" placeholder="#####"formControlName="zipcode">
+              </mat-form-field>
+              <ng-container *ngFor="let validation of validationMessages.zipcode">
+                <mat-error *ngIf="userForm.get('zipcode').hasError(validation.type) && (userForm.get('zipcode').dirty || userForm.get('zipcode').touched)">{{validation.message}}</mat-error>
+              </ng-container>
+            </div>
+
+            <div class="Age">
+              <mat-label>Age</mat-label>
+              <br>
+              <mat-form-field class="input-style">
+                <input matInput type="Agetext" class="form-control" placeholder="Age" formControlName="age">
+              </mat-form-field>
+              <ng-container *ngFor="let validation of validationMessages.age">
+                <mat-error *ngIf="userForm.get('age').hasError(validation.type) && (userForm.get('age').dirty || userForm.get('age').touched)">{{validation.message}}</mat-error>
+              </ng-container>
+            </div>
+
+          </div>
+
+          <hr>
+
+          <div class="optionalQuestion">
+            <div class="employment">
+              <mat-label>Gender</mat-label>
+              <br>
+              <mat-form-field>
+                <select formControlName="gender">
+                  <option name="gender" value="male">Male</option>
+                  <option name="gender" value="female">Female</option>
+                  <option name="gender" value="other">Other</option>
+                </select>
+              </mat-form-field>
+            </div>
+
+            <div class="employment">
+              <mat-label>Employment status</mat-label>
+              <br>
+              <mat-form-field>
+                <select formControlName="employmentStatus">
+                  <option name="employmentStatus" value="full">Full Time</option>
+                  <option name="employmentStatus" value="part">Part Time</option>
+                  <option name="employmentStatus" value="student">Student</option>
+                  <option name="employmentStatus" value="none">None</option>
+                </select>
+              </mat-form-field>
+            </div>
+
+
+            <div class="employment">
+              <mat-label>Income</mat-label>
+              <br>
+              <mat-form-field>
+                <select formControlName="incomeRange">
+                  <option name="incomeRange" value="range1">$25,000 or less</option>
+                  <option name="incomeRange" value="range2">$25,000 - $50,000</option>
+                  <option name="incomeRange" value="range3">$50,000 - $100,000</option>
+                  <option name="incomeRange" value="range4">$100,000 plus</option>
+                </select>
+              </mat-form-field>
+            </div>
+
+            <div class="employment">
+              <mat-label>Where do you currently do laundry?</mat-label>
+              <br>
+              <mat-form-field>
+                <select formControlName="laundryPlace">
+                  <option name="laundryPlace" value="home">Home</option>
+                  <option name="laundryPlace" value="apartment">Apartment</option>
+                  <option name="laundryPlace" value="service">Laundry Service</option>
+                  <option name="laundryPlace" value="laundromat">Laundromat</option>
+                </select>
+              </mat-form-field>
+            </div>
+
+            <div class="employment">
+              <mat-label>How often do you do laundry?</mat-label>
+              <br>
+              <mat-form-field>
+                <select formControlName="laundryFrequency">
+                  <option name="laundryFrequency" value="1perweek">less than 1 load a week</option>
+                  <option name="laundryFrequency" value="12perweek">1-2 loads a week</option>
+                  <option name="laundryFrequency" value="34perweek">3-4 loads a week</option>
+                  <option name="laundryFrequency" value="5perweek">5+ loads a week</option>
+                </select>
+              </mat-form-field>
+            </div>
+
+            <div class="employment">
+              <mat-label>What would you use this service for?</mat-label>
+              <br>
+              <mat-form-field>
+                <select formControlName="laundryType">
+                  <option name="laundryType" value="basics">Basics (i.e. t-shirts, jeans, socks)</option>
+                  <option name="laundryType" value="delicates">Delicates (i.e. undergarments, dresses, slacks)</option>
+                  <option name="laundryType" value="handwash">Hand-Wash necessary items</option>
+                  <option name="laundryType" value="towelsbedding">Towels and bedding</option>
+                  <option name="laundryType" value="chuckitall">Chuck it all in!</option>
+                </select>
+              </mat-form-field>
+            </div>
 
 
 
-        <div class="email">
-          <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="email" required>
-        </div>
+          </div>
 
-        <div class="password">
-          <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
-        </div>
-
-
-        <div class="zipCode">
-
-          <label for="zipCode"><b>Zip Code</b></label>
-          <input type="Ziptext" placeholder="#####" name="zipCode" required>
-
-        </div>
-
-        <div class="Age">
-          <label for="Age"><b>Age</b></label>
-          <input type="Agetext" placeholder="Age" name="Age" required>
-        </div>
-
-      </div>
-
-
-      <hr>
-
-  <div class="optionalQuestion">
-      <div class="gender">
-        <label id="gender"><b>Gender</b></label>
-        <br>
-        <input class="radioInput" type="radio" name="gender" value="male"> Male
-        <br>
-        <input class="radioInput" type="radio" name="gender" value="female"> Female
-        <br>
-        <input  class="radioInput" type="radio" name="gender" value="other"> Other
-        <br>
-      </div>
-
-      <div class="employment">
-        <label id="employment"><b>Employment Status</b></label>
-        <br>
-        <select>
-          <option name="employment" value="full">Full</option>
-          <option name="employment" value="part">Part</option>
-          <option name="employment" value="student">Student</option>
-          <option name="employment" value="none">None</option>
-        </select>
-      </div>
-
-
-        <div class="question1">
-          <label id="question1"><b>Where do you currently do laundry?</b></label>
           <br>
-          <select>
-            <option name="question1" value="home">Home</option>
-            <option name="question1" value="apartment">Apartment</option>
-            <option name="question1" value="service">Laundry Service</option>
-            <option name="question1" value="laundromat">Laundromat</option>
-          </select>
-        </div>
 
-        <div class="question2">
-          <label id="question2"><b>How often do you do laundry?</b></label>
-          <br>
-          <select>
-            <option name="question2" value="1perweek">less than 1 load a week</option>
-            <option name="question2" value="12perweek">1-2 loads a week</option>
-            <option name="question2" value="34perweek">3-4 loads a week</option>
-            <option name="question2" value="5perweek">5+ loads a week</option>
-          </select>
-        </div>
-
-        <div class="question3">
-          <label id="question3"><b>What would you use this service for?</b></label>
-          <br>
-          <select>
-            <option name="question3" value="basics">Basics (i.e. t-shirts, jeans, socks)</option>
-            <option name="question3" value="delicates">Delicates (i.e. undergarments, work tops, nicer slacks, dresses)</option>
-            <option name="question3" value="handwash">Hand-Wash necessary items</option>
-            <option name="question3" value="towelsbedding">Towels and bedding</option>
-            <option name="question3" value="chuckitall">Chuck it all in!</option>
-          </select>
-        </div>
+          <div class="NewsLetterAndTerms">
+            <div>
+              <mat-label>Subscribe to our news letter!  </mat-label>
+              <mat-form-field>
+                <input type="checkbox" value="subscribe" formControlName="newsletter">
+              </mat-form-field>
+            </div>
 
 
+            <p style="color: white">
+              By creating an account you agree to our <a href="#"
+                                                         style="color: dodgerblue">Terms & Privacy</a>.
+            </p>
 
-  </div>
+          </div>
+          <div class="clearfix">
+
+            <button mat-raised-button class="signupbtn" color="primary" type="submit" [disabled]="!userForm.valid">Submit</button>
+
+          </div>
+
+        </form>
 
 
-      <div class="NewsLetterAndTerms">
-      <div>
-        <label id="newsletter">Subscribe to our news letter?</label>
-        <input type="checkbox" name="newsletter" checked>
-      </div>
-
-
-      <p style="color: white">
-        By creating an account you agree to our <a href="#"
-                                                   style="color: dodgerblue">Terms & Privacy</a>.
-      </p>
-
-      </div>
-
-      <div class="clearfix">
-        <button type="submit" class="signupbtn" value="register">Sign
-          Up</button>
-      </div>
     </div>
   </div>
 
-
+  </div>
