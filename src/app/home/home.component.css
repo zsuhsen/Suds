@@ -376,7 +376,7 @@ padding-bottom: 20px;
 .backDrop {
 
   background-color: #6bdff0;
-  height: 250px;
+  height: 300px;
   width: 100%;
   margin: 0px;
   padding: 0px;
@@ -400,45 +400,22 @@ padding-bottom: 20px;
 
 }
 
+.TrustIsKey {
 
-@media screen and (max-width: 1030px) {
-
-  .TrustandSafteyColumn {
-    float: none;
-    width: 100%;
-    padding: 5px;
-    text-align: center;
-  }
-
-
-  .backDrop {
-
-    background-color: #6bdff0;
-    height: 1150px;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-
-
-  }
-
-
-  .TrustSentence {
-
-    color: white;
-
-  }
-
-
+  text-align: center;
+  padding-bottom: 50px;
 
 }
 
+
+
+
 .TrustHeaders {
 
-text-align: center;
-font-type: bolder;
-font-weight: 900;
-font-size: 25px;
+  text-align: center;
+  font-type: bolder;
+  font-weight: 900;
+  font-size: 25px;
 
 }
 
@@ -454,12 +431,6 @@ font-size: 25px;
 
 }
 
-.TrustIsKey {
-
-  text-align: center;
-  padding-bottom: 20px;
-  
-}
 
 .TrustMe {
   color: white;
@@ -467,6 +438,8 @@ font-size: 25px;
   font-weight: 900;
   margin: 0px;
   padding-top: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
 
 }
 
@@ -480,11 +453,53 @@ font-size: 25px;
 }
 
 
+@media screen and (max-width: 1030px) {
+
+  .TrustandSafteyColumn {
+    float: none;
+    width: 100%;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+
+  .backDrop {
+
+    background-color: #6bdff0;
+    height: 1200px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+
+
+  }
+
+
+  .TrustSentence {
+
+    color: black;
+
+  }
+
+  .TrustIsKey {
+
+    text-align: center;
+    padding-bottom: 10px;
+
+  }
+
+
+
+}
+
+
+
 
 .newsLetter {
 
   height: 220px;
-
   border: 2px solid #6bdff0;
   background-color: #333333;
   margin-top: 250px;
@@ -499,7 +514,7 @@ font-size: 25px;
 
   .newsLetter {
 
-    height: 300px;
+    height: 400px;
     text-align: center;
     margin-top: 0px;
 

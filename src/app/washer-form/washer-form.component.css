@@ -2,7 +2,7 @@
 
 .mat-error {
   font-size: 13px;
-  color: white;
+  color: black;
   margin: 0px;
   padding-top: 0px;
   padding-bottom: 10px;
@@ -22,33 +22,33 @@
 input[type=text], input[type=password] {
   width: 200px;
   padding: 13px;
+  border: 1px solid black;
   font-size: 12px;
   margin: 5px 0 10px 0;
   border-radius: 10px;
   display: block;
-  border: none;
   background: white;
 }
 
 input[type=Agetext] {
   width: 60px;
   padding: 13px;
+  border: 1px solid black;
   font-size: 12px;
   margin: 5px 0 10px 0;
   border-radius: 10px;
   display: block;
-  border: none;
   background: white;
 }
 
 input[type=Ziptext] {
   width: 75px;
   padding: 13px;
+  border: 1px solid black;
   font-size: 12px;
   margin: 5px 0 10px 0;
   border-radius: 10px;
   display: block;
-  border: none;
   background: white;
 }
 
@@ -119,7 +119,7 @@ button:hover {
   width: 100%;
   padding-left: 10px;
   height: auto; /* Should be removed. Only for demonstration */
-  background-color: #333333;
+  background-color: #f2f2f2;
 }
 
 /* Clear floats after the columns */
@@ -135,7 +135,7 @@ button:hover {
 
 mat-label {
 
-  color: white;
+  color: black;
 
 
 }
@@ -144,7 +144,7 @@ mat-label {
 
   margin-top: 50px;
   width: 100%;
-  background: #333333;
+  height: 100px;
 
 }
 
@@ -286,10 +286,9 @@ mat-label {
   }
 
 
-
-
-
 }
+
+
 
 hr {
 
@@ -311,7 +310,7 @@ hr {
 .gender {
 
   float: left;
-  width: 10%;
+  width: 100%;
   padding-top: 10px;
   padding-bottom: 20px;
 
@@ -320,7 +319,7 @@ hr {
 .employment {
 
   float: left;
-  width: 14%;
+  width: 100%;
   padding-top: 10px;
   padding-bottom: 20px;
 
@@ -330,7 +329,7 @@ hr {
 .question1 {
 
   float: left;
-  width: 24%;
+  width: 100%;
   padding-top: 10px;
   padding-bottom: 20px;
 }
@@ -338,7 +337,7 @@ hr {
 .question2 {
 
   float: left;
-  width: 20%;
+  width: 100%;
   padding-top: 10px;
   padding-bottom: 20px;
 }
@@ -346,126 +345,11 @@ hr {
 .question3 {
 
   float: left;
-  width: 32%;
+  width: 100%;
   padding-top: 10px;
   padding-bottom: 20px;
 
 }
-
-
-@media screen and (max-width: 1150px) {
-
-
-  .gender {
-
-    float: left;
-    width: 10%;
-
-  }
-
-  .employment {
-
-    float: left;
-    width: 20%;
-
-
-  }
-
-  .question1 {
-
-    float: left;
-    width: 35%;
-  }
-
-  .question2 {
-
-    float: left;
-    width: 35%;
-  }
-
-  .question3 {
-
-    float: left;
-    width: 100%;
-
-  }
-
-
-
-
-}
-
-
-@media screen and (max-width: 900px) {
-
-
-  .gender {
-
-    float: left;
-    width: 20%;
-
-  }
-
-  .employment {
-
-    float: left;
-    width: 30%;
-
-
-  }
-
-  .question1 {
-
-    float: left;
-    width: 50%;
-  }
-
-  .question2 {
-
-    float: left;
-    width: 100%;
-  }
-
-}
-
-
-@media screen and (max-width: 550px) {
-
-
-  .gender {
-
-    float: left;
-    width: 50%;
-
-  }
-
-  .employment {
-
-    float: left;
-    width: 50%;
-
-
-  }
-
-  .question1 {
-
-    float: left;
-    width: 100%;
-  }
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
 
 .NewsLetterAndTerms {
 
