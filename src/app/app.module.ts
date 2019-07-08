@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
-import { WasherRegistrationComponent } from './washer-registration/washer-registration.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
@@ -22,6 +21,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { WasherFormComponent } from './washer-form/washer-form.component';
 import { HelpComponent } from './help/help.component';
 import { UserFormComponent } from './user-form/user-form.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 @NgModule({
@@ -29,7 +29,6 @@ import { UserFormComponent } from './user-form/user-form.component';
     AppComponent,
     HomeComponent,
     NavComponent,
-    WasherRegistrationComponent,
     FooterComponent,
     LoginComponent,
     UserRegistrationComponent,
@@ -37,7 +36,8 @@ import { UserFormComponent } from './user-form/user-form.component';
     NewsLetterComponent,
     WasherFormComponent,
     HelpComponent,
-    UserFormComponent
+    UserFormComponent,
+    AboutUsComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase, 'suds-delivery'),
