@@ -78,6 +78,9 @@ body {
   position: page;
   background-image: url('../../assets/images/footer.jpg');
   height: 350px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+
 
 }
 
@@ -85,7 +88,8 @@ body {
 
   width: 150px;
   height: 150px;
-  margin: 50px 15px 0 0;
   float: right;
+  margin-right: 20px;
+  margin-top: 50px;
 
 }
