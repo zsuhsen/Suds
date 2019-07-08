@@ -7,7 +7,9 @@ body {
 
 }
 
-
+.backgroundimage {
+  background-image: url('../../assets/images/footer.jpg');
+}
 
 .FooterHeader {
 
@@ -73,6 +75,7 @@ body {
   width: 100%;
   margin: 0px;
   padding: 0px;
+  position: page;
   background-image: url('../../assets/images/footer.jpg');
   height: 350px;
 
