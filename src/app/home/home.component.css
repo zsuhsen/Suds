@@ -1,13 +1,12 @@
 @import "https://use.fontawesome.com/releases/v5.7.0/css/all.css";
-body {
-/* background-image: url("images/WoodBackground copy.jpg"); */
+html {
 
-background-color: #fbfbfb;
-  margin: 0px;
-  padding: 0px;
+  height:100%;
+  position:relative;
+  overflow-x:hidden;
+  overflow-y:hidden;
 
 }
-
 
 .mainSlogan {
 
@@ -29,6 +28,7 @@ background-color: #fbfbfb;
 
 .row {
 margin-top: 0px;
+  width: 100%;
 
 }
 
@@ -50,15 +50,6 @@ margin-top: 0px;
 
 }
 
-.mainImageTwo {
-
-  width: 100%;
-  padding: 0px;
-  height: 400px;
-
-
-
-}
 
 .mainSudsMap {
   background-color: #333333;
@@ -67,23 +58,24 @@ margin-top: 0px;
 
 .SudsMap {
 
-  width: 100%;
+  width: 80%;
   height: auto;
-  padding-right: 50px;
-  padding-left: 50px;
-  padding-bottom: 60px;
-  margin: 0px;
+  margin: 1% 0 5% 10%;
+  box-shadow:  0 0 11px  #333333;;
+  -moz-box-shadow: 0 0 11px  #333333;;
+  -webkit-box-shadow: 0 0 11px  #333333;;
+  -o-box-shadow: 0 0 11px  #333333;;
 
 
 }
 
 .SudsMapHeader {
 
-  color: white;
+  color: black;
   font-family: inherit;
   text-align: center;
   font-size: 35px;
-  padding-top: 15px;
+  padding-top: 5px;
   padding-bottom: 15px;
   margin: 0px;
 
@@ -255,7 +247,7 @@ height: 120px;
   width: 50%;
   padding-top: 20px;
   padding-right: 0px;
-  padding-left: 60px; 
+  padding-left: 60px;
   
   
 }
@@ -265,8 +257,8 @@ height: 120px;
   float: left;
   width: 50%;
   padding-top: 20px;
-  padding-right: 0px; 
-  padding-left: 60px; 
+  padding-right: 0px;
+  padding-left: 60px;
   
   
 }
@@ -584,7 +576,7 @@ font-size: 25px;
   border: 2px solid #6bdff0;
   background-color: #333333;
   margin-top: 250px;
-  margin-bottom: -35px;
+  margin-bottom: -30px;
   padding: 0px;
   width: 100%;
 
@@ -611,7 +603,7 @@ font-size: 25px;
 .RegisterToday {
 
   width: 100%;
-  height: 170px;
+  height: 200px;
   background-color: #6bdff0;
   margin-top: 0px;
   margin-bottom: -10px;
@@ -623,7 +615,7 @@ font-size: 25px;
 
 .RegisterTodayHeader {
 
-  padding-top: 10px;
+  padding-top: 25px;
   text-align: center;
   color: white;
   font-size: 35px;

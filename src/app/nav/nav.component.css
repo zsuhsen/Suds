@@ -1,13 +1,14 @@
 @import "https://use.fontawesome.com/releases/v5.7.0/css/all.css";
-body {
-  margin:0;
-  font-family:inherit;
 
 
+/*Still working with this*/
+html {
+
+  overflow-x: hidden;
+  max-width: 100%;
+  height: auto;
 
 }
-
-html { height: 100% }
 
 
 .joinButton {
@@ -39,6 +40,7 @@ html { height: 100% }
   border-top: 2px solid lightgray;
   border-bottom: 2px solid lightgray;
   height: 105px;
+  padding: 0px;
    
 }
 
