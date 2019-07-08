@@ -201,3 +201,26 @@ html {
 
 
 }
+
+.tooltip {
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  background-color: #6bdff0;
+  color: black;
+  text-align: center;
+  padding: 3px 0;
+  box-shadow: 4px 6px 8px #888888;
+
+  opacity: 0.8;
+
+  /* Position the tooltip */
+  position: absolute;
+
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
