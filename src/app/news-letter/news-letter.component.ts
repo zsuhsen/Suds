@@ -14,7 +14,7 @@ export class NewsLetterComponent implements OnInit {
       { type: 'required', message: 'Name is required.' }
     ],
     email: [
-      { type: 'required', message: 'Surname is required.' }
+      { type: 'required', message: 'Email is required.' }
     ]
   };
 

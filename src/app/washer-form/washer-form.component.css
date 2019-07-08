@@ -1,7 +1,11 @@
 
 
 .mat-error {
-  font-size: 12px;
+  font-size: 13px;
+  color: white;
+  margin: 0px;
+  padding-top: 0px;
+  padding-bottom: 10px;
 }
 
 
@@ -19,7 +23,7 @@ input[type=text], input[type=password] {
   width: 200px;
   padding: 13px;
   font-size: 12px;
-  margin: 5px 0 22px 0;
+  margin: 5px 0 10px 0;
   border-radius: 10px;
   display: block;
   border: none;
@@ -27,9 +31,10 @@ input[type=text], input[type=password] {
 }
 
 input[type=Agetext] {
-  width: 50px;
-  padding: 15px;
-  margin: 5px 0 22px 0;
+  width: 60px;
+  padding: 13px;
+  font-size: 12px;
+  margin: 5px 0 10px 0;
   border-radius: 10px;
   display: block;
   border: none;
@@ -38,8 +43,9 @@ input[type=Agetext] {
 
 input[type=Ziptext] {
   width: 75px;
-  padding: 15px;
-  margin: 5px 0 22px 0;
+  padding: 13px;
+  font-size: 12px;
+  margin: 5px 0 10px 0;
   border-radius: 10px;
   display: block;
   border: none;
