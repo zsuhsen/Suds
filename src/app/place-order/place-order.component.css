@@ -1,8 +1,16 @@
-th, td {
+td {
   width: 15%;
   font-size: 15px;
   text-align: left;
   border: #3b3b3b solid 1px;
+}
+
+th {
+  width: 15%;
+  font-size: 15px;
+  text-align: left;
+  font-weight: normal;
+  text-decoration: underline;
 }
 
 tr {
@@ -13,4 +21,8 @@ caption {
   font-size: 20px;
   font-weight: bold;
   text-align: left;
+}
+
+input {
+  border: solid 1px;
 }

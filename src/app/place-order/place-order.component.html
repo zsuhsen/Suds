@@ -7,22 +7,142 @@
         <div>
           <table style="width: 75%">
             <caption>{{capitalizeFirstLetter(item.payload.doc.data().fname)}} {{capitalizeFirstLetter(item.payload.doc.data().lname)}}</caption>
+
             <tr>
-              <th>ZipCode</th>
-              <th>Age</th>
-              <th>Rating</th>
-            </tr>
-            <tr>
-              <td>{{item.payload.doc.data().zipcode}}</td>
-              <td>{{item.payload.doc.data().age}}</td>
-              <td>5 stars</td>
-              <td style="border: none"> <button type="button" href="">Place Order</button> </td>
+              <td>ZipCode: {{item.payload.doc.data().zipcode}}</td>
+              <td>Age: {{item.payload.doc.data().age}}</td>
+              <td>Rating: 5 stars</td>
+              <td style="border: none"> <mat-label>pick me!</mat-label><input type="checkbox" name="washer" value="{{item.payload.doc.id}}"></td>
             </tr>
           </table>
         </div>
 
         <hr>
       </div>
+    <div>
+      <h3>What Clothing do you have?</h3>
+
+      <div>
+        <h4>Sport Wear</h4>
+
+        <mat-label>Workout Shirt Count</mat-label>
+        <mat-form-field class="input-style">
+          <input matInput type="text" class="form-control" formControlName="sportShirt">
+        </mat-form-field>
+
+        <br>
+        <mat-label>Workout Pants/Shorts Count</mat-label>
+        <mat-form-field class="input-style">
+          <input matInput type="text" class="form-control" formControlName="sportPants">
+        </mat-form-field>
+
+        <br>
+        <mat-label>Compressions Count</mat-label>
+        <mat-form-field class="input-style">
+          <input matInput type="text" class="form-control" formControlName="compressions">
+        </mat-form-field>
+
+
+      </div>
+
+      <div>
+        <h4>Casual Wear</h4>
+
+        <mat-label>T-Shirt Count</mat-label>
+        <mat-form-field class="input-style">
+          <input matInput type="text" class="form-control" formControlName="casualShirt">
+        </mat-form-field>
+
+        <br>
+        <mat-label>Pants Count</mat-label>
+        <mat-form-field class="input-style">
+          <input matInput type="text" class="form-control" formControlName="casualPants">
+        </mat-form-field>
+
+        <br>
+        <mat-label>Sweats (shirt/pant) Count</mat-label>
+        <mat-form-field class="input-style">
+          <input matInput type="text" class="form-control" formControlName="casualSweats">
+        </mat-form-field>
+      </div>
+
+
+      <div>
+        <h4>Work Wear </h4>
+
+        <mat-label>Dress Shirt/ Blouse Count</mat-label>
+        <mat-form-field class="input-style">
+          <input matInput type="text" class="form-control" formControlName="workShirt">
+        </mat-form-field>
+
+        <br>
+        <mat-label>Slacks Count</mat-label>
+        <mat-form-field class="input-style">
+          <input matInput type="text" class="form-control" formControlName="workSlacks">
+        </mat-form-field>
+
+        <br>
+        <mat-label>Dresses Count</mat-label>
+        <mat-form-field class="input-style">
+          <input matInput type="text" class="form-control" formControlName="workDress">
+        </mat-form-field>
+      </div>
+
+
+      <div>
+        <h4>Undergarments</h4>
+
+        <mat-label>Underwear Count</mat-label>
+        <mat-form-field class="input-style">
+          <input matInput type="text" class="form-control" formControlName="underwear">
+        </mat-form-field>
+
+        <br>
+        <mat-label>Bra Count</mat-label>
+        <mat-form-field class="input-style">
+          <input matInput type="text" class="form-control" formControlName="bras">
+        </mat-form-field>
+
+        <br>
+        <mat-label>Sock Pair Count</mat-label>
+        <mat-form-field class="input-style">
+          <input matInput type="text" class="form-control" formControlName="sockPairs">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <h4>Misillaneous</h4>
+
+        <mat-label>Swimwear</mat-label>
+        <mat-form-field class="input-style">
+          <input matInput type="text" class="form-control" formControlName="swimwear">
+        </mat-form-field>
+
+        <br>
+        <mat-label>Other</mat-label>
+        <mat-form-field class="input-style">
+          <input matInput type="text" class="form-control" formControlName="otherTitle">
+          <input matInput type="text" class="form-control" formControlName="otherQuantity">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <h4>Non-Clothing Items</h4>
+
+        <mat-label>Bedding Item Count</mat-label>
+        <mat-form-field class="input-style">
+          <input matInput type="text" class="form-control" formControlName="bedding">
+        </mat-form-field>
+
+        <br>
+        <mat-label>Blanket Count</mat-label>
+        <mat-form-field class="input-style">
+          <input matInput type="text" class="form-control" formControlName="blankets">
+        </mat-form-field>
+      </div>
+
+
+    </div>
 
 
 
