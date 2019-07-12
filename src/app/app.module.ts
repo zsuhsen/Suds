@@ -15,13 +15,22 @@ import { UserRegistrationComponent } from './user-registration/user-registration
 import { PlaceOrderComponent } from './place-order/place-order.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FirebaseService} from './services/firebase.service';
-import {MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatInputModule,
+  MatSliderModule,
+  MatDialogModule,
+  MatTableModule,
+  MatDividerModule,
+  MatRadioModule
+} from '@angular/material';
 import { NewsLetterComponent } from './news-letter/news-letter.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { WasherFormComponent } from './washer-form/washer-form.component';
 import { HelpComponent } from './help/help.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ClothingQuantitiesComponent } from './clothing-quantities/clothing-quantities.component';
 
 
 @NgModule({
@@ -37,7 +46,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     WasherFormComponent,
     HelpComponent,
     UserFormComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    ClothingQuantitiesComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase, 'suds-delivery'),
@@ -50,7 +60,10 @@ import { AboutUsComponent } from './about-us/about-us.component';
     MatButtonModule,
     MatInputModule,
     MatSliderModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule,
+    MatDividerModule,
+    MatRadioModule
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]

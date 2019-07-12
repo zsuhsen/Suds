@@ -1,28 +1,11 @@
-td {
-  width: 15%;
-  font-size: 15px;
-  text-align: left;
-  border: #3b3b3b solid 1px;
-}
-
-th {
-  width: 15%;
-  font-size: 15px;
-  text-align: left;
-  font-weight: normal;
-  text-decoration: underline;
-}
-
-tr {
-  padding: unset;
-}
-
-caption {
-  font-size: 20px;
-  font-weight: bold;
-  text-align: left;
+h3, h4 {
+  display: inline;
 }
 
 input {
   border: solid 1px;
+}
+
+.tab {
+  margin-left: 40px;
 }
