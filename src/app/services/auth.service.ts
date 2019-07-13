@@ -7,6 +7,8 @@ import * as firebase from 'firebase/app';
 })
 export class AuthService {
   constructor(public afAuth: AngularFireAuth) { }
+
+
   doFacebookLogin() {
     return new Promise<any>((resolve, reject) => {
       const provider = new firebase.auth.FacebookAuthProvider();
