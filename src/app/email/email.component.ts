@@ -3,12 +3,16 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AuthService} from '../services/auth.service';
 
+declare var FB: any;
+
 @Component({
   selector: 'app-email',
   templateUrl: './email.component.html',
   styleUrls: ['./email.component.css']
 })
 export class EmailComponent implements OnInit {
+
+
 
   registerForm: FormGroup;
   errorMessage: string;
@@ -21,13 +25,40 @@ export class EmailComponent implements OnInit {
   }
 
   ngOnInit() {
+
+
+    (window as any).fbAsyncInit = function() {
+      FB.init({
+        appId      : '635040696978282',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v2.6'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+
   }
+
+
+
+
   createForm() {
     this.registerForm = this.fb.group({
       email: ['', Validators.required ],
       password: ['', Validators.required]
     });
   }
+
+
   tryFacebookLogin() {
     this.authService.doFacebookLogin()
       .then(res => {

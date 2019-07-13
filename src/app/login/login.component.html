@@ -1,39 +1,203 @@
-<h1 class="header">Login with Firebase or Social Providers</h1>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+
+
+    html, body {
+
+      background-image: radial-gradient(rgba(92,100,111,1) 0%,rgba(31,35,40,1) 100%);
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding-top: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* style the container */
+    .container {
+      width: 80%;
+      margin: 0 0 0 10%;
+      position: relative;
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px 0 30px 0;
+    }
+
+    /* style inputs and link buttons */
+    input,
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      margin: 5px 0;
+      opacity: 0.85;
+      display: inline-block;
+      font-size: 17px;
+      line-height: 20px;
+      text-decoration: none; /* remove underline from anchors */
+    }
+
+    input:hover,
+    .btn:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    /* add appropriate colors to fb, twitter and google buttons */
+    .fb {
+      background-color: #3B5998;
+      color: white;
+    }
+
+    .twitter {
+      background-color: #55ACEE;
+      color: white;
+    }
+
+    .google {
+      background-color: #dd4b39;
+      color: white;
+    }
+
+    /* style the submit button */
+    input[type=submit] {
+      background-color: #333333;
+      color: #6bdff0;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      opacity: 0.9;
+    }
+
+    /* Two-column layout */
+    .col {
+      float: left;
+      width: 50%;
+      margin: auto;
+      padding: 0 50px;
+      margin-top: 6px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* vertical line */
+    .vl {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+      border: 2px solid #ddd;
+      height: 175px;
+    }
+
+    /* text inside the vertical line */
+    .vl-innertext {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      padding: 8px 10px;
+    }
+
+    /* hide some text on medium and large screens */
+    .hide-md-lg {
+      display: none;
+    }
+
+    /* bottom container */
+    .bottom-container {
+      text-align: center;
+      width: 80%;
+      padding-bottom: 30px;
+      margin: 0 0 0 10%;
+      border-radius: 0px 0px 4px 4px;
+    }
+
+    /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+      .col {
+        width: 100%;
+        margin-top: 0;
+      }
+      /* hide the vertical line */
+      .vl {
+        display: none;
+      }
+      /* show the hidden text on small screens */
+      .hide-md-lg {
+        display: block;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div>
+
+
+</div>
+
 <div class="container">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <form [formGroup]="loginForm">
-        <div class="form-group">
-          <label>Email address</label>
-          <input type="email" formControlName="email" class="form-control">
+  <form [formGroup]="registerForm">
+    <div class="row">
+      <h2 style="text-align:center; font-size: 30px">Login to Suds account</h2>
+      <div class="vl">
+        <span class="vl-innertext">or</span>
+      </div>
+
+      <div class="col">
+        <a (click)="tryFacebookLogin()" class="fb btn">
+          <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+        </a>
+        <a (click)="tryTwitterLogin()" class="twitter btn">
+          <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+        </a>
+        <a (click)="tryGoogleLogin()" class="google btn"><i class="fa fa-google fa-fw">
+        </i> Login with Google+
+        </a>
+      </div>
+
+      <div class="col">
+        <div class="hide-md-lg">
+          <p>Or:</p>
         </div>
-        <div class="form-group">
-          <label>Password</label>
-          <input type="password" class="form-control" formControlName="password">
-          <label class="error">{{errorMessage}}</label>
-        </div>
-        <button type="submit" (click)="tryLogin(loginForm.value)" class="btn btn-default">Login</button>
-      </form>
+
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <label class="error">{{errorMessage}}</label>
+        <label class="success">{{successMessage}}</label>
+        <input (click)="tryRegister(registerForm.value)" type="submit" value="Login">
+      </div>
+
     </div>
-  </div>
+  </form>
+</div>
+
+<div class="bottom-container">
   <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Login with Facebook</button>
+    <div class="col">
+      <a href="#" style="color:white" class="btn">Dont have an account? Sign Up</a>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <button type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">Login with Google</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <button type="button" class="btn btn-info btn-block" (click)="tryTwitterLogin()">Login with Twitter</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <p>No account yet? <a href="/emaillog">Create an account</a></p>
+    <div class="col">
+      <a href="#" style="color:white" class="btn">Forgot Password?</a>
     </div>
   </div>
 </div>
+
+
+</body>
+</html>
+

@@ -1,0 +1,92 @@
+.RegistrationForm {
+  margin: auto;
+  align: center;
+  width: 50%;
+  background-color: gray;
+
+}
+
+.EmailAndPassword {
+
+  text-align: left;
+  width: 100%;
+
+}
+
+.EmailInput {
+
+  width: 50%;
+  float: left;
+
+}
+
+.PasswordInput {
+
+  width: 50%;
+  float: left;
+
+}
+
+.registerButtons {
+
+  text-align: center;
+
+}
+
+.EmailPasswordRegisterButton {
+
+  background-color: #333333;
+  color: #6bdff0;
+  width: 200px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  font-size: 15px;
+
+
+
+}
+
+.FacebookRegisterButton {
+
+  background-color: royalblue;
+  color: white;
+  width: 200px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  font-size: 15px;
+
+
+
+}
+
+.GoogleRegisterButton {
+
+  background-color: firebrick;
+  color: white;
+  width: 200px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  font-size: 15px;
+
+
+}
+
+.TwitterRegisterButton {
+
+  background-color: cornflowerblue;
+  color: white;
+  width: 200px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  font-size: 15px;
+
+
+
+
+}
+
+
