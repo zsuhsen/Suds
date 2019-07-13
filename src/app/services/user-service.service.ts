@@ -51,5 +51,6 @@ export class UserServiceService {
     getWashers() {
       return this.db.collection('users', ref => ref.where('userType', '==', 'washer')).snapshotChanges();
     }
+
     getUsers() {}
 }

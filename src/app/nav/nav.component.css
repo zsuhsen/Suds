@@ -2,11 +2,107 @@
 
 
 /*Still working with this*/
-html {
+html, body {
 
   overflow-x: hidden;
   max-width: 100%;
-  height: auto;
+  margin: 0px;
+  padding: 0px;
+
+}
+
+.nav {
+
+  width: 100%;
+  text-align: right;
+  height: 115px;
+  line-height: 115px;
+  background: white;
+  border-bottom: 1px solid #333333;
+
+
+}
+
+.menu {
+
+  margin: 0px 0px 0px 0px;
+
+}
+
+.menu a {
+
+  clear: right;
+  text-decoration: none;
+  color: black;
+  margin: 0px;
+  line-height: 115px;
+  padding: 28px;
+  text-transform: uppercase;
+  transition: .2s ease;
+
+}
+
+.menu a:hover, a:active {
+
+  text-decoration: underline;
+
+}
+
+label {
+
+  margin: 0px 40px 0px 0px;
+  font-size: 26px;
+  line-height: 115px;
+  display: none;
+  width: 26px;
+  float: right;
+  color: #000000;
+
+}
+
+#toggle {
+
+  display: none;
+}
+
+
+@media only screen and (max-width: 825px) {
+  label {
+
+    display: block;
+    cursor: pointer;
+
+  }
+
+  label:hover, label:active {
+    background: none;
+
+  }
+
+  .menu {
+
+    text-align: center;
+    width: 100%;
+    display: none;
+    border-bottom: 1px solid white;
+
+  }
+
+
+  .menu a {
+
+    display: block;
+    border-top: 1px solid white;
+    background-color: #6bdff0;
+    margin: 0px;
+    padding: 0px;
+
+  }
+
+  #toggle:checked + .menu {
+    display: block;
+  }
+
 
 }
 
@@ -184,7 +280,7 @@ html {
   border: none;
   float: left;
   margin-bottom: 0px;
-  margin-left:25px;
+  margin-left:20px;
   margin-top:5px;
   background-color: white;
   width: 100px;
@@ -203,21 +299,23 @@ html {
 }
 
 .tooltip {
+  float: left;
 }
 
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 100px;
+  height: 30px;
   background-color: #6bdff0;
   color: black;
   text-align: center;
-  padding: 3px 0;
+  padding: 4px 4px;
   box-shadow: 4px 6px 8px #888888;
 
   opacity: 0.8;
 
   /* Position the tooltip */
-  position: absolute;
+  /*  position: absolute;*/
 
 }
 

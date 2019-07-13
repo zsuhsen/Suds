@@ -1,39 +1,26 @@
 
 <html>
-<header>
-  <div>
-    <!-- The css for the tooltip is in the class nav.component.css at the bottom-->
-    <div class="tooltip">
-      <a routerLink="/"><img src="assets/images/SudsLogo.png" alt="Clean Laundry" class="myButton"></a>
-      <span class="tooltiptext">Home Page</span>
-    </div>
-    <div class="topnav" id="myTopnav">
-      <a routerLink="/user" class="joinButton" style="color: #3b3b3b; text-decoration: none;margin-top: 33px"> Join Suds</a>
-      <a routerLink="/login" class="bubbles">Login</a>
-      <a routerLink="/aboutus" class="bubbles">About Us</a>
-      <a routerLink="/washer" class="bubbles">Become A Washer</a>
-      <a routerLink="/order" class="bubbles">Place An Order</a>
-      <a routerLink="/emaillog" class="bubbles">Email register</a>
-    </div>
+
+<body id="container" (window:resize)="onResize($event)">
+
+<div class="nav">
+  <div class="tooltip">
+    <a routerLink="/"><img src="assets/images/SudsLogo.png" alt="Clean Laundry" class="myButton"></a>
+    <span class="tooltiptext">Home Page</span>
+  </div>
+  <label for="toggle">&#9776;</label>
+  <input type="checkbox" id="toggle" (change)="heightUpdate($event)"/>
+  <div class="menu">
+    <a routerLink="/order">Place An Order</a>
+    <a routerLink="/washer">Become a washer</a>
+    <a href="/login">Login</a>
+    <a href="/user">Join Suds</a>
 
   </div>
 
+</div>
 
 
-  <script>
-    function myFunction() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
-      }
-    }
-  </script>
-
-</header>
-
+</body>
 
 </html>
-
-
