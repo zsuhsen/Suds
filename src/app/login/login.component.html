@@ -151,7 +151,7 @@
 </div>
 
 <div class="container">
-  <form [formGroup]="registerForm">
+  <form [formGroup]="loginForm">
     <div class="row">
       <h2 style="text-align:center; font-size: 30px">Login to Suds account</h2>
       <div class="vl">
@@ -175,11 +175,10 @@
           <p>Or:</p>
         </div>
 
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
+        <input type="text" name="email" formControlName="email" placeholder="Email" required>
+        <input type="password" name="password" formControlName="password" placeholder="Password" required>
         <label class="error">{{errorMessage}}</label>
-        <label class="success">{{successMessage}}</label>
-        <input (click)="tryRegister(registerForm.value)" type="submit" value="Login">
+        <input (click)="tryLogin(loginForm.value)" type="submit" value="Login">
       </div>
 
     </div>
