@@ -12,8 +12,6 @@ declare var FB: any;
 })
 export class EmailComponent implements OnInit {
 
-
-
   registerForm: FormGroup;
   errorMessage: string;
   successMessage: string;

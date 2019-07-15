@@ -13,6 +13,7 @@ import {FirebaseUserModel} from '../model/user.model';
 })
 export class ProfileComponent implements OnInit {
 
+
   user: FirebaseUserModel = new FirebaseUserModel();
   profileForm: FormGroup;
   constructor( public userService: UserService,
@@ -22,8 +23,14 @@ export class ProfileComponent implements OnInit {
                private router: Router,
                private fb: FormBuilder) { }
 
+
   ngOnInit(): void {
+
   }
+
+
+
+
   logout() {
     this.authService.doLogout()
       .then((res) => {
