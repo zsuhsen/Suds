@@ -9,7 +9,7 @@ export class UserServiceService {
 
   constructor(public db: AngularFirestore) {}
     createWasher(value) {
-      return this.db.collection('users').add({
+      return this.db.collection('users/userType/washers').add({
         fname: value.fname,
         lname: value.lname,
         email: value.email,
@@ -24,12 +24,11 @@ export class UserServiceService {
         dryerAgeRange: value.dryerAgeRange,
         vehicleAccess: value.vehicleAccess,
         carry20Pounds: value.carry20Pounds,
-        newsletter: value.newsletter,
-        userType: 'washer' /** we want this to show what type of user they are */
+        newsletter: value.newsletter
       });
     }
     createUser(value) {
-      return this.db.collection('users').add({
+      return this.db.collection('usersuserType/reguser').add({
         fname: value.fname,
         lname: value.lname,
         email: value.email,
@@ -42,14 +41,13 @@ export class UserServiceService {
         laundryPlace: value.laundryPlace,
         laundryFrequency: value.laundryFrequency,
         laundryType: value.laundryType,
-        newsletter: value.newsletter,
-        userType: 'user'
+        newsletter: value.newsletter
       });
     }
     updateUser() {}
     deleteUser() {}
     getWashers() {
-      return this.db.collection('users', ref => ref.where('userType', '==', 'washer')).snapshotChanges();
+      return this.db.collection('users/userType/washers').snapshotChanges();
     }
 
     getUsers() {}

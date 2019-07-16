@@ -12,7 +12,7 @@
   <input type="checkbox" id="toggle" (change)="heightUpdate($event)"/>
   <div class="menu">
     <a routerLink="/order">Place An Order</a>
-    <a routerLink="/washer">Become a washer</a>
+    <a *ngIf="!user" href="/washerinfo">Want to become a washer?</a>
     <a *ngIf="!user" href="/login">Login</a>
     <a *ngIf="!user" href="/emaillog">Join Suds</a>
     <a *ngIf="user" (click)="logout()">Logout</a>
