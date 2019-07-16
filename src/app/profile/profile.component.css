@@ -11,3 +11,7 @@
   display: block;
 
 }
+
+input {
+  border: solid 1px;
+}

@@ -24,10 +24,27 @@ export class ProfileComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+    this.route.data.subscribe(routeData => {
+      const data = routeData.data;
+      if (data) {
+        this.user = data;
+        this.createForm(this.user.name);
+      }
+    });
   }
 
+  createForm(name) {
+    this.profileForm = this.fb.group({
+      name: [name, Validators.required ]
+    });
+  }
 
+  save(value) {
+    this.userService.updateCurrentUser(value)
+      .then(res => {
+        console.log(res);
+      }, err => console.log(err));
+  }
 
 
   logout() {
