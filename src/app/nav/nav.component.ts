@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from "../services/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-nav',
@@ -6,6 +8,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
+
+
+  user: firebase.User;
+
+  title = 'Suds'
+  constructor(public authService: AuthService, private router: Router) { }
+
+  ngOnInit() {
+
+    this.authService.getLoggedInUser()
+      .subscribe( user => {
+        console.log( user );
+        this.user = user;
+
+      });
+
+  }
+
+  logout() {
+    this.authService.doLogout()
+      .then((res) => {
+        this.router.navigate(['/']);
+      }, (error) => {
+        console.log('Logout error', error);
+      });
+  }
+
+
 
 
   onResize(e) {
@@ -29,10 +59,6 @@ export class NavComponent implements OnInit {
 
   }
 
-  title = 'Suds'
-  constructor() { }
 
-  ngOnInit() {
-  }
 
 }

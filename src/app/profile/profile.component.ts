@@ -13,7 +13,9 @@ import {FirebaseUserModel} from '../model/user.model';
 })
 export class ProfileComponent implements OnInit {
 
-  user: FirebaseUserModel = new FirebaseUserModel();
+  user: firebase.User;
+
+
   profileForm: FormGroup;
   constructor( public userService: UserService,
                public authService: AuthService,
@@ -24,13 +26,23 @@ export class ProfileComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.route.data.subscribe(routeData => {
-      const data = routeData.data;
-      if (data) {
-        this.user = data;
-        this.createForm(this.user.name);
-      }
-    });
+    //what is this doing?
+    // this.route.data.subscribe(routeData => {
+    //   const data = routeData.data;
+    //   if (data) {
+    //     this.user = data;
+    //     this.createForm(this.user.name);
+    //   }
+    // });
+
+    this.authService.getLoggedInUser()
+      .subscribe( user => {
+        console.log( user );
+        this.user = user;
+
+      });
+
+
   }
 
   createForm(name) {

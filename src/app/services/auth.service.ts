@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
+import { auth } from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,14 @@ import * as firebase from 'firebase/app';
 export class AuthService {
   constructor(public afAuth: AngularFireAuth) { }
 
+
+  //returns state of user...logged in or not
+  getLoggedInUser() {
+
+    return this.afAuth.authState;
+
+
+  }
 
   doFacebookLogin() {
     return new Promise<any>((resolve, reject) => {

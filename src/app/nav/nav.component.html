@@ -13,8 +13,10 @@
   <div class="menu">
     <a routerLink="/order">Place An Order</a>
     <a routerLink="/washer">Become a washer</a>
-    <a href="/login">Login</a>
-    <a href="/emaillog">Join Suds</a>
+    <a *ngIf="!user" href="/login">Login</a>
+    <a *ngIf="!user" href="/emaillog">Join Suds</a>
+    <a *ngIf="user" (click)="logout()">Logout</a>
+    <a *ngIf="user" href="/profile">Profile</a>
 
   </div>
 

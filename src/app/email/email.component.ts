@@ -12,6 +12,8 @@ declare var FB: any;
 })
 export class EmailComponent implements OnInit {
 
+  user: firebase.User;
+
   registerForm: FormGroup;
   errorMessage: string;
   successMessage: string;
@@ -23,6 +25,17 @@ export class EmailComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    //this method checks whether or not a user is logged in and puts user detals in user.
+
+    this.authService.getLoggedInUser()
+      .subscribe( user => {
+        console.log( user );
+        this.user = user;
+
+      });
+
+
 
 
     (window as any).fbAsyncInit = function() {
