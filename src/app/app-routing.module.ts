@@ -9,6 +9,7 @@ import {AboutUsComponent} from './about-us/about-us.component';
 import {ClothingQuantitiesComponent} from './clothing-quantities/clothing-quantities.component';
 import {EmailComponent} from './email/email.component';
 import {ProfileComponent} from './profile/profile.component';
+import {RegistrationInfoComponent} from './registration-info/registration-info.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'washer', component: WasherFormComponent},
   {path: 'aboutus', component: AboutUsComponent},
   {path: 'emaillog', component: EmailComponent},
-  {path: 'profile', component: ProfileComponent}
+  {path: 'profile', component: ProfileComponent},
+  {path: 'info', component: RegistrationInfoComponent}
 ];
 
 @NgModule({

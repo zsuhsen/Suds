@@ -13,7 +13,6 @@ import {FirebaseUserModel} from '../model/user.model';
 })
 export class ProfileComponent implements OnInit {
 
-
   user: FirebaseUserModel = new FirebaseUserModel();
   profileForm: FormGroup;
   constructor( public userService: UserService,
@@ -21,7 +20,7 @@ export class ProfileComponent implements OnInit {
                private route: ActivatedRoute,
                private location: Location,
                private router: Router,
-               private fb: FormBuilder) { }
+               private fb: FormBuilder) {}
 
 
   ngOnInit(): void {
@@ -39,5 +38,4 @@ export class ProfileComponent implements OnInit {
         console.log('Logout error', error);
       });
   }
-
 }
