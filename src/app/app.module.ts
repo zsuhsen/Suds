@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {HttpClientModule} from '@angular/common/http';
+import { AgmCoreModule } from '@agm/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
@@ -38,6 +39,7 @@ import { MembersComponent } from './members/members.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RatingComponent } from './rating/rating.component';
 import { RegistrationInfoComponent } from './registration-info/registration-info.component';
+import { GoogleMapComponent } from './google-map/google-map.component';
 import { WasherInfoComponent } from './washer-info/washer-info.component';
 
 export const firebaseConfig = {
@@ -74,6 +76,7 @@ export const firebaseConfig = {
     ProfileComponent,
     RatingComponent,
     RegistrationInfoComponent,
+    GoogleMapComponent,
     WasherInfoComponent,
   ],
   imports: [
@@ -91,7 +94,12 @@ export const firebaseConfig = {
     MatDialogModule,
     MatTableModule,
     MatDividerModule,
-    MatRadioModule
+    MatRadioModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAALekl-TxySBy9yfEzuTs-Y6H35dovezI'
+    })
+
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]
