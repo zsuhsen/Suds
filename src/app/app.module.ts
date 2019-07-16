@@ -38,6 +38,7 @@ import { MembersComponent } from './members/members.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RatingComponent } from './rating/rating.component';
 import { RegistrationInfoComponent } from './registration-info/registration-info.component';
+import { LoggedInNavComponent } from './logged-in-nav/logged-in-nav.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyDfxu-PSpd-h1MyTaryL1L9I2gVUcEFPYo',
@@ -72,7 +73,8 @@ export const firebaseConfig = {
     MembersComponent,
     ProfileComponent,
     RatingComponent,
-    RegistrationInfoComponent
+    RegistrationInfoComponent,
+    LoggedInNavComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

@@ -5,12 +5,19 @@
   <style>
 
 
-    html, body {
+    html {
 
-      background-image: radial-gradient(rgba(92,100,111,1) 0%,rgba(31,35,40,1) 100%);
+      background: radial-gradient(rgba(92,100,111,1) 0%,rgba(31,35,40,1) 100%);
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
       font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      padding-top: 20px;
+      margin: 0px;
+      padding-top: 80px;
+      min-width: 100%;
+      width: 100%;
+      min-height: 100%;
     }
 
     * {
@@ -120,8 +127,8 @@
     .bottom-container {
       text-align: center;
       width: 80%;
-      padding-bottom: 30px;
       margin: 0 0 0 10%;
+      padding-bottom: 80px;
       border-radius: 0px 0px 4px 4px;
     }
 
@@ -144,11 +151,6 @@
   </style>
 </head>
 <body>
-
-<div>
-
-
-</div>
 
 <div class="container">
   <form [formGroup]="registerForm">
