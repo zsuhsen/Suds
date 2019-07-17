@@ -1,8 +1,15 @@
 <h1>Your Information</h1>
 
-<agm-map [latitude]="lat" [longitude]="lng">
+<agm-map [zoom]="11" [latitude]="lat" [longitude]="lng">
 
   <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+
+  <agm-circle [latitude]="lat" [longitude]="lng"
+              [radius]="6000"
+              [fillColor]="'blue'"
+              [circleDraggable]="false"
+              [editable]="false">
+  </agm-circle>
 
 
 </agm-map>

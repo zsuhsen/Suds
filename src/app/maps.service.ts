@@ -23,4 +23,5 @@ export class MapsService {
     return this.http.get<Location>('http://api.ipapi.com/api/check?access_key=a079babeef2082dea937e226cf794f64')
   }
 
+
 }

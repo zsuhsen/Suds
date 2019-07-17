@@ -22,6 +22,7 @@ export class GoogleMapComponent implements OnInit {
       this.lat = data.latitude;
       this.lng = data.longitude;
 
+
     })
 
   }
