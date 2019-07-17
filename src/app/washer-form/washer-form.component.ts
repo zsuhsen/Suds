@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {UserServiceService} from 'src/app/services/user-service.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
+import {UserService} from '../services/user.service';
+import {AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'app-washer-form',
@@ -9,6 +11,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./washer-form.component.css']
 })
 export class WasherFormComponent implements OnInit {
+  user: firebase.User;
   washerForm: FormGroup;
   validationMessages = {
     fname: [
@@ -31,21 +34,24 @@ export class WasherFormComponent implements OnInit {
     ]
   };
 
-  constructor(private fb: FormBuilder,
+  constructor(public authService: AuthService,
+              private fb: FormBuilder,
               private router: Router,
               private us: UserServiceService) { }
 
   ngOnInit() {
     this.createForm();
+    this.authService.getLoggedInUser()
+      .subscribe( user => {
+        console.log( user );
+        this.user = user;
+
+      });
   }
   createForm() {
     this.washerForm = this.fb.group({
       fname: ['', Validators.required ],
       lname: ['', Validators.required ],
-      email: ['', Validators.required ],
-      password: ['', Validators.required ],
-      age: ['', Validators.required ],
-      zipcode: ['', Validators.required ],
       gender: ['male'],
       employmentStatus: ['none'],
       incomeRange: ['range1'],
@@ -61,10 +67,6 @@ export class WasherFormComponent implements OnInit {
     this.washerForm = this.fb.group({
       fname: new FormControl('', Validators.required),
       lname: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required),
-      age: new FormControl('', Validators.required),
-      zipcode: new FormControl('', Validators.required),
       gender: new FormControl('male'),
       employmentStatus: new FormControl('none'),
       incomeRange: new FormControl('range1'),
@@ -77,7 +79,7 @@ export class WasherFormComponent implements OnInit {
     });
   }
   onSubmit(value) {
-    this.us.createWasher(value).then(
+    this.us.washerFormInfo(value, this.user.uid).then(
       res => {
         this.resetFields();
         this.router.navigate(['/']);

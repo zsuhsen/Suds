@@ -32,48 +32,7 @@
     </ng-container>
 
   </div>
-  <div class="email">
-    <mat-label>Email</mat-label>
-    <br>
-    <mat-form-field class="input-style">
-      <input matInput type="text" class="form-control"  placeholder="Enter Email" formControlName="email">
-    </mat-form-field>
-    <ng-container *ngFor="let validation of validationMessages.email">
-      <mat-error *ngIf="washerForm.get('email').hasError(validation.type) && (washerForm.get('email').dirty || washerForm.get('email').touched)">{{validation.message}}</mat-error>
-    </ng-container>
-  </div>
-  <div class="password">
-    <mat-label>Password</mat-label>
-    <br>
-    <mat-form-field class="input-style">
-      <input matInput type="password" class="form-control" placeholder="Enter Password" formControlName="password">
-    </mat-form-field>
-    <ng-container *ngFor="let validation of validationMessages.password">
-      <mat-error *ngIf="washerForm.get('password').hasError(validation.type) && (washerForm.get('password').dirty || washerForm.get('password').touched)">{{validation.message}}</mat-error>
-    </ng-container>
-  </div>
 
-    <div class="zipCode">
-      <mat-label>Zipcode</mat-label>
-      <br>
-      <mat-form-field class="input-style">
-        <input matInput type="Ziptext" class="form-control" placeholder="#####"formControlName="zipcode">
-      </mat-form-field>
-      <ng-container *ngFor="let validation of validationMessages.zipcode">
-        <mat-error *ngIf="washerForm.get('zipcode').hasError(validation.type) && (washerForm.get('zipcode').dirty || washerForm.get('zipcode').touched)">{{validation.message}}</mat-error>
-      </ng-container>
-    </div>
-
-    <div class="Age">
-      <mat-label>Age</mat-label>
-      <br>
-      <mat-form-field class="input-style">
-        <input matInput type="Agetext" class="form-control" placeholder="Age" formControlName="age">
-      </mat-form-field>
-      <ng-container *ngFor="let validation of validationMessages.age">
-        <mat-error *ngIf="washerForm.get('age').hasError(validation.type) && (washerForm.get('age').dirty || washerForm.get('age').touched)">{{validation.message}}</mat-error>
-      </ng-container>
-    </div>
 
   </div>
 

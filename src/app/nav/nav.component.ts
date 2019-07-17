@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../services/auth.service";
-import {Router} from "@angular/router";
+import {AuthService} from '../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -12,7 +12,7 @@ export class NavComponent implements OnInit {
 
   user: firebase.User;
 
-  title = 'Suds'
+  title = 'Suds';
   constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -40,21 +40,23 @@ export class NavComponent implements OnInit {
 
   onResize(e) {
 
-    let toggleElement = <HTMLInputElement> document.getElementById("toggle");
+    const toggleElement = document.getElementById('toggle') as HTMLInputElement;
 
-    if (e.target.innerWidth < 825 && toggleElement.checked)
+    if (e.target.innerWidth < 825 && toggleElement.checked) {
       document.getElementById('container').style.height = '400px';
-    else
+    } else {
       document.getElementById('container').style.height = '100%';
+    }
 
   }
 
   heightUpdate(e) {
 
-    if (e.target.checked)
+    if (e.target.checked) {
       document.getElementById('container').style.height = '400px';
-    else
+    } else {
       document.getElementById('container').style.height = '100%';
+    }
 
 
   }

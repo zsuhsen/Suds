@@ -4,11 +4,20 @@
 <h3> User Name: {{user?.displayName}}</h3>
 <h3> User Email: {{user?.email}}</h3>
 
+<div>
+  <p>Are you avaiable?</p>
+  <label class="switch">
+    <input type="checkbox" on-change="availability()">
+    <span class="slider"></span>
+  </label>
+</div>
+
 <div class="ratingSystem">
 
   <app-rating></app-rating>
 
 </div>
+
 <div class="container">
   <a *ngIf="user" href="/washer">Become A Washer Today!</a>
   <button (click)="logout()" type="button" class="profileLogoutButton">Logout</button>

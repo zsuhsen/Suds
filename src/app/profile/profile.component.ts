@@ -5,6 +5,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {AuthService} from '../services/auth.service';
 import {UserService} from '../services/user.service';
 import {FirebaseUserModel} from '../model/user.model';
+import {MapsService} from '../maps.service';
+import {UserServiceService} from '../services/user-service.service';
 
 @Component({
   selector: 'app-profile',
@@ -14,19 +16,23 @@ import {FirebaseUserModel} from '../model/user.model';
 export class ProfileComponent implements OnInit {
 
   user: firebase.User;
-
+  lat: string;
+  lng: string;
+  items: Array<any>;
 
   profileForm: FormGroup;
   constructor( public userService: UserService,
+               public us: UserServiceService,
                public authService: AuthService,
                private route: ActivatedRoute,
                private location: Location,
                private router: Router,
-               private fb: FormBuilder) {}
+               private fb: FormBuilder,
+               private map: MapsService) {}
 
 
   ngOnInit(): void {
-    //what is this doing?
+    // what is this doing?
     // this.route.data.subscribe(routeData => {
     //   const data = routeData.data;
     //   if (data) {
@@ -41,8 +47,18 @@ export class ProfileComponent implements OnInit {
         this.user = user;
 
       });
+    this.map.getLocation().subscribe(data => {
+
+      console.log(data);
+      this.lat = data.latitude;
+      this.lng = data.longitude;
+
+    });
 
 
+  }
+  availability() {
+    this.us.addLatLng(this.lat, this.lng, this.user.uid);
   }
 
   createForm(name) {
