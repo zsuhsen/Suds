@@ -24,6 +24,22 @@
 
   </agm-marker>
 
+  <div *ngFor="let location of locations">
+
+    <agm-marker *ngIf="(location.payload.doc.data().latitude != lat && location.payload.doc.data().longitude != lng)"
+                [iconUrl]="'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'"
+                latitude="{{location.payload.doc.data().latitude}}" longitude="{{location.payload.doc.data().longitude}}">
+
+      <agm-info-window >
+        <h3>{{location.payload.doc.data().fname}} {{location.payload.doc.data().lname}}</h3>
+      </agm-info-window>
+
+    </agm-marker>
+
+  </div>
+
+
+
 
 </agm-map>
 
