@@ -41,6 +41,8 @@ import { RatingComponent } from './rating/rating.component';
 import { RegistrationInfoComponent } from './registration-info/registration-info.component';
 import { GoogleMapComponent } from './google-map/google-map.component';
 import { WasherInfoComponent } from './washer-info/washer-info.component';
+import { ImageUploadComponent } from './image-upload/image-upload.component';
+
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyDfxu-PSpd-h1MyTaryL1L9I2gVUcEFPYo',
@@ -78,6 +80,7 @@ export const firebaseConfig = {
     RegistrationInfoComponent,
     GoogleMapComponent,
     WasherInfoComponent,
+    ImageUploadComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
