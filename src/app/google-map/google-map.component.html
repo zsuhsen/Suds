@@ -1,15 +1,30 @@
-<h1>Your Information</h1>
+<h1 class="mapHeader">Find Suds Washers Near You!</h1>
 
-<agm-map [zoom]="11" [latitude]="lat" [longitude]="lng">
+<div class="googleMap">
 
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+<agm-map [zoom]="10" [latitude]="lat" [longitude]="lng">
+
+  <agm-marker [latitude]="lat" [longitude]="lng">
+
+<!--Radius is in kilometers-->
 
   <agm-circle [latitude]="lat" [longitude]="lng"
+
               [radius]="6000"
               [fillColor]="'blue'"
               [circleDraggable]="false"
               [editable]="false">
   </agm-circle>
 
+  <agm-info-window [isOpen]="true">
+
+    <h3>You are here!</h3>
+
+  </agm-info-window>
+
+  </agm-marker>
+
 
 </agm-map>
+
+</div>
