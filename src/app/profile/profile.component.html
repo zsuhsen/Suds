@@ -1,7 +1,23 @@
 <body>
 <h1 class="header">Profile Page</h1>
+
+<div *ngFor="let userimage of userInfo">
+  <div *ngIf="userimage.payload.doc.data().imageURL != null">
+    <img src="{{userimage.payload.doc.data().imageURL}}" height="130 px" width="130 px">
+  </div>
+  <div *ngIf="userimage.payload.doc.data().imageURL == null">
+    <img src="{{defaultProfile}}" height="130 px" width="130 px">
+  </div>
+</div>
 <!--Question mark is so program wont error if user doesnt have a username-->
-<h3> User Name: {{user?.displayName}}</h3>
+<div *ngIf="user?.displayName != null">
+  <h3> User Name: {{user?.displayName}}</h3>
+</div>
+<div *ngIf="user?.displayName == null">
+  <div *ngFor="let userstuff of userInfo">
+    <h3> User Name: {{userstuff.payload.doc.data().fname}} {{userstuff.payload.doc.data().lname}}</h3>
+  </div>
+</div>
 <h3> User Email: {{user?.email}}</h3>
 
 <div>
@@ -18,6 +34,9 @@
 
 </div>
 
+<div>
+  <app-image-upload></app-image-upload>
+</div>
 
 <div class="container">
   <a *ngIf="user" href="/washer">Become A Washer Today!</a>

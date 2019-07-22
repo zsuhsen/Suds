@@ -19,6 +19,9 @@ export class ProfileComponent implements OnInit {
   lat: string;
   lng: string;
   items: Array<any>;
+  userInfo: Array<any>;
+  // tslint:disable-next-line:max-line-length
+  defaultProfile = 'https://firebasestorage.googleapis.com/v0/b/suds-delivery.appspot.com/o/uploads%2Fsudslogostraight.png?alt=media&token=001b9dff-f21f-4d5b-be44-aca418c35a4b';
 
   profileForm: FormGroup;
   constructor( public userService: UserService,
@@ -45,7 +48,9 @@ export class ProfileComponent implements OnInit {
       .subscribe( user => {
         console.log( user );
         this.user = user;
-
+        this.us.getUserDoc(this.user.uid).subscribe(result => {
+          this.userInfo = result;
+        });
       });
     this.map.getLocation().subscribe(data => {
 

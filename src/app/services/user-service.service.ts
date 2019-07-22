@@ -91,6 +91,32 @@ export class UserServiceService {
       });
     });
   }
+  addImageURL(image, uid) {
+    let docId: any;
+    let values: any;
+    this.getUserDoc(uid).subscribe(result => {
+      docId = result.pop().payload.doc;
+      values = docId.data();
+      this.db.collection(`users`).doc(docId.id).set({
+        fname: values.fname,
+        lname: values.lname,
+        gender: values.gender,
+        employmentStatus: values.employmentStatus,
+        incomeRange: values.incomeRange,
+        availabilityDays: values.availabilityDays,
+        availabilityHours: values.availabilityHours,
+        dryerAgeRange: values.dryerAgeRange,
+        vehicleAccess: values.vehicleAccess,
+        carry20Pounds: values.carry20Pounds,
+        newsletter: values.newsletter,
+        userType: 'washer', /** we want this to show what type of user they are */
+        userId: values.userId,
+        latitude: values.latitude,
+        longitude: values.longitude,
+        imageURL: image
+      });
+    });
+  }
   getUserDoc(uid) {
     return this.db.collection('users', ref => ref.where('userId', '==', uid)).snapshotChanges();
   }

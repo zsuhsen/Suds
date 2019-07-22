@@ -12,6 +12,11 @@
 
 }
 
+img {
+  border: solid 2px;
+  box-shadow: 4px 6px 8px #888888;
+}
+
 input {
   border: solid 1px;
 }
