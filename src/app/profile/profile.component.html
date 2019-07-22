@@ -39,20 +39,26 @@
         <br>
         <a *ngIf="user" href="/washer">Become A Washer Today!</a>
         <br>
-        <br>
+        <a *ngIf="user" href="/user">Fill out your User information!</a>
+        <br><br>
         <button (click)="logout()" type="button" class="profileLogoutButton">Logout</button>
         <br>
         <br>
-
-        <h3>Washer Links:</h3>
-        <br>
-        <div>
-          <p>Are you avaiable?</p>
-          <label class="switch">
-            <input type="checkbox" on-change="availability()">
-            <span class="slider"></span>
-          </label>
+        <div *ngFor="let userimage of userInfo">
+          <div *ngIf="userimage.payload.doc.data().userType != null && userimage.payload.doc.data().userType == 'washer'">
+            <h3>Washer Links:</h3>
+            <br>
+            <div>
+              <p>Are you avaiable?</p>
+              <label class="switch">
+                <input type="checkbox" on-change="availability()">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
         </div>
+
+
 
       </div>
   </div>

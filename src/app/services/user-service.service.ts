@@ -47,6 +47,21 @@ export class UserServiceService {
         userType: 'user'
       });
     }
+    userFormInfo(value, uid) {
+      return this.db.collection('users').add({
+        fname: value.fname,
+        lname: value.lname,
+        gender: value.gender,
+        employmentStatus: value.employmentStatus,
+        incomeRange: value.incomeRange,
+        laundryPlace: value.laundryPlace,
+        laundryFrequency: value.laundryFrequency,
+        laundryType: value.laundryType,
+        newsletter: value.newsletter,
+        userType: 'user', /** we want this to show what type of user they are */
+        userId: uid
+      });
+    }
   washerFormInfo(value, uid) {
     return this.db.collection('users').add({
       fname: value.fname,
@@ -91,6 +106,21 @@ export class UserServiceService {
       });
     });
   }
+  addUserImageURL(image, uid) {
+    let docId: any;
+    let values: any;
+    this.getUserDoc(uid).subscribe(result => {
+      docId = result.pop().payload.doc;
+      values = docId.data();
+      this.db.collection(`users`).doc(docId.id).set({
+        fname: values.fname,
+        lname: values.lname,
+        userType: 'user', /** we want this to show what type of user they are */
+        userId: values.userId,
+        imageURL: image
+      });
+    });
+  }
   addImageURL(image, uid) {
     let docId: any;
     let values: any;
@@ -125,6 +155,7 @@ export class UserServiceService {
     getWashers() {
       return this.db.collection('users', ref => ref.where('userType', '==', 'washer')).snapshotChanges();
     }
-
-    getUsers() {}
+  getUsers() {
+    return this.db.collection('users', ref => ref.where('userType', '==', 'user')).snapshotChanges();
+  }
 }

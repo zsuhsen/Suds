@@ -14,14 +14,20 @@ export class ImageUploadComponent implements OnInit {
   user: firebase.User;
   selectedFiles: FileList;
   currentUpload: Upload;
+  userInfo: Array<any>;
+  usertype: any;
   constructor(public authService: AuthService,
+              public us: UserServiceService,
               public upSvc: UploadService) { }
   ngOnInit() {
     this.authService.getLoggedInUser()
       .subscribe( user => {
         console.log( user );
         this.user = user;
-
+        this.us.getUserDoc(this.user.uid).subscribe(result => {
+          this.userInfo = result;
+          this.usertype = this.userInfo[0].payload.doc.data().userType;
+        });
       });
   }
   detectFiles(event) {
@@ -31,7 +37,7 @@ export class ImageUploadComponent implements OnInit {
   uploadSingle() {
     const file = this.selectedFiles.item(0);
     this.currentUpload = new Upload(file);
-    this.upSvc.pushUpload(this.currentUpload, this.user.uid);
+    this.upSvc.pushUpload(this.currentUpload, this.user.uid, this.usertype);
   }
 
 
