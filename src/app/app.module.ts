@@ -90,7 +90,6 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireDatabaseModule,
-    RecaptchaModule.forRoot(),
     BrowserModule,
     FormsModule,
     AppRoutingModule,
