@@ -5,12 +5,16 @@
   <div class="column main">
     <h1 class="header">Profile Page</h1>
 
-        <div *ngFor="let userimage of userInfo">
+    <div class="imageandinfodisplay">
+        <div *ngFor="let userimage of userInfo" >
           <div *ngIf="userimage.payload.doc.data().imageURL != null">
             <img src="{{userimage.payload.doc.data().imageURL}}" height="130 px" width="130 px">
           </div>
-          <div *ngIf="userimage.payload.doc.data().imageURL == null">
+          <div *ngIf="userimage.payload.doc.data().imageURL == null" >
             <img src="{{defaultProfile}}" height="130 px" width="130 px">
+          </div>
+          <div *ngIf="user" >
+            <h3>Rating</h3>
           </div>
         </div>
         <!--Question mark is so program wont error if user doesnt have a username-->
@@ -23,14 +27,17 @@
           </div>
         </div>
         <h3> User Email: {{user?.email}}</h3>
-
+    </div>
+    <div>
         <h3>Your rating: </h3>
         <app-rating></app-rating>
-
+    </div>
         <br><br><br>
 
+    <div>
         <h4>Download an avatar!</h4>
         <app-image-upload></app-image-upload>
+    </div>
 
   </div>
   <div class="column side">
@@ -47,14 +54,8 @@
         <div *ngFor="let userimage of userInfo">
           <div *ngIf="userimage.payload.doc.data().userType != null && userimage.payload.doc.data().userType == 'washer'">
             <h3>Washer Links:</h3>
-            <br>
-            <div>
-              <p>Are you avaiable?</p>
-              <label class="switch">
-                <input type="checkbox" on-change="availability()">
-                <span class="slider"></span>
-              </label>
-            </div>
+              <h4>Max distance to travel</h4>
+              <button>Change Max Distance</button>
           </div>
         </div>
 

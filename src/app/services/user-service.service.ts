@@ -62,6 +62,24 @@ export class UserServiceService {
         userId: uid
       });
     }
+  usertest(uid) {
+    let docId: any;
+    this.getUserDoc(uid).subscribe(result => {
+      docId = result.pop().payload.doc.id;
+      return this.db.collection('users').doc(docId).update({
+        testval: 'test'
+      });
+      });
+  }
+  editFieldTest(uid) {
+    let docId: any;
+    this.getUserDoc(uid).subscribe(result => {
+      docId = result.pop().payload.doc.id;
+      return this.db.collection('users').doc(docId).set({
+        testval: 'anothertest'
+      }, {merge: true});
+    });
+  }
   washerFormInfo(value, uid) {
     return this.db.collection('users').add({
       fname: value.fname,

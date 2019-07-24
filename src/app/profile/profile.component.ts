@@ -65,6 +65,9 @@ export class ProfileComponent implements OnInit {
   availability() {
     this.us.addLatLng(this.lat, this.lng, this.user.uid);
   }
+  testUpdate() {
+    this.us.editFieldTest(this.user.uid);
+  }
 
   createForm(name) {
     this.profileForm = this.fb.group({
