@@ -43,8 +43,7 @@ import { RegistrationInfoComponent } from './registration-info/registration-info
 import { GoogleMapComponent } from './google-map/google-map.component';
 import { WasherInfoComponent } from './washer-info/washer-info.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
-import { RecaptchaModule } from 'ng-recaptcha';
-import { UserCartComponent } from './user-cart/user-cart.component'
+import { UserCartComponent } from './user-cart/user-cart.component';
 
 
 export const firebaseConfig = {
@@ -92,7 +91,6 @@ export const firebaseConfig = {
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     RecaptchaModule.forRoot(),
-    // RecaptchaFormsModule, // if you need forms support
     BrowserModule,
     FormsModule,
     AppRoutingModule,
