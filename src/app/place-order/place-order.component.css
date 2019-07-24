@@ -1,11 +1,47 @@
-h3, h4 {
-  display: inline;
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 250px;
+  text-align: center;
+  font-family: arial;
+  display: inline-block;
+  margin: 10px;
 }
 
-input {
-  border: solid 1px;
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #6bdff0;
+  text-align: center;
+  cursor: pointer;
+  width: 60%;
+  margin: 10px auto;
+  border-radius: 10px;
+  font-size: 18px;
 }
 
-.tab {
-  margin-left: 40px;
+button:hover {
+  opacity: 0.7;
+}
+
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
 }

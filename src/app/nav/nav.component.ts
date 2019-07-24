@@ -29,7 +29,7 @@ export class NavComponent implements OnInit {
   logout() {
     this.authService.doLogout()
       .then((res) => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/login']);
       }, (error) => {
         console.log('Logout error', error);
       });

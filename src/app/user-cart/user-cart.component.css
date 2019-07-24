@@ -1,0 +1,48 @@
+
+.checkoutCart {
+
+  float: left;
+  width: 50%;
+
+}
+
+.totalDiv {
+
+  border: 2px solid black;
+  background-color: #dddddd;
+  height: auto;
+  width: 60%;
+  margin: 0 0 0 20%;
+  text-align: center;
+
+}
+
+.checkoutbutton {
+
+  text-align: center;
+  display: inline;
+  float: none;
+  margin: 10px;
+  padding: 10px;
+  font-size: 15px;
+  color: black;
+  border-radius: 10px;
+  border: 1px solid #6bdff0;
+
+}
+
+.clearCartbutton {
+
+  text-align: center;
+  display: inline;
+  float: none;
+  margin: 10px;
+  padding: 10px;
+  font-size: 15px;
+  color: black;
+  border-radius: 10px;
+  border: 1px solid #6bdff0;
+
+
+
+}

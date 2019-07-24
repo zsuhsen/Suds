@@ -1,0 +1,29 @@
+<div class="checkoutCart">
+
+  <div class="totalDiv">
+    <h3>Your Cart <i class="fa fa-shopping-cart"></i></h3>
+    <p *ngIf="totalPrice == 0">No items currently in your cart.</p>
+    <p *ngIf="TshirtCount > 0">TShirt x {{TshirtCount}}</p>
+    <p *ngIf="longSleeveCount > 0">Long Sleeve x {{longSleeveCount}}</p>
+    <p *ngIf="tankTopCount > 0">Tank Top x {{tankTopCount}}</p>
+    <p *ngIf="buttonDownCount > 0">Button Down x {{buttonDownCount}}</p>
+    <p *ngIf="sweaterCount > 0">Sweater x {{sweaterCount}}</p>
+
+    <p *ngIf="shortsCount > 0">Shorts x {{shortsCount}}</p>
+    <p *ngIf="pantsCount > 0">Pants x {{pantsCount}}</p>
+    <p *ngIf="jeansCount> 0">Jeans x {{jeansCount}}</p>
+    <p *ngIf="underwearCount > 0">Under Garments x {{underwearCount}}</p>
+    <p *ngIf="socksCount > 0">Socks x {{socksCount}}</p>
+
+    <p *ngIf="comforterCount > 0">Comforter x {{comforterCount}}</p>
+    <p *ngIf="blanketCount> 0">Blanket / Sheets x {{blanketCount}}</p>
+    <p *ngIf="tableClothCount > 0">Table Cloth x {{tableClothCount}}</p>
+    <p *ngIf="pillowCaseCount > 0">Pillow Case x {{pillowCaseCount}}</p>
+
+    <h3 style="display: inline;">Total: </h3>
+    <input style="width: 45px; height: 20px; display: inline;" type="number" name="totalPrice" value="{{totalPrice}}">
+    <button class="checkoutbutton">Checkout</button>
+    <button (click)="clearCartChild()" class="clearCartbutton">Clear Cart</button>
+  </div>
+
+</div>

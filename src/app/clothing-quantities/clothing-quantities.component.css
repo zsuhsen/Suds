@@ -1,16 +1,52 @@
+
+.TableAndCart {
+
+  width: 100%;
+  height: auto;
+
+
+
+}
+
+.Tabbble {
+
+  float: left;
+  width: 50%;
+
+}
+
+.clothingButtons {
+
+  text-align: center;
+  border-bottom: 1px solid black;
+  width: 100%;
+  margin: 0 0 0 0;
+  height: auto;
+
+
+}
+
 .uppersButton {
 
-  display: block;
-  margin-bottom: 30px;
-  margin-top: 10px;
+  display: inline;
   padding: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border-bottom: none;
+  color: white;
+  font-size: 15px;
+  width: 33%;
 }
 
 .lowersButton {
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  display: inline;
   padding: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border-bottom: none;
+  color: white;
+  font-size: 15px;
+  width: 33%;
 
 
 
@@ -18,18 +54,26 @@
 
 .othersButton {
 
-  display: block;
-  margin-top: 10px;
+  display: inline;
   padding: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border-bottom: none;
+  color: white;
+  font-size: 15px;
+  width: 33%;
 
 }
+
+
 
 /*Clothing Table*/
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 80%;
-  margin: 0 0 0 10%;
+  width: 100%;
+  height: auto;
+  margin: 0 0 40px 0;
 }
 
 td, th {

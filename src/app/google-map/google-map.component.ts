@@ -7,6 +7,8 @@ import {UserServiceService} from '../services/user-service.service';
   templateUrl: './google-map.component.html',
   styleUrls: ['./google-map.component.css']
 })
+
+
 export class GoogleMapComponent implements OnInit {
 
 
@@ -25,10 +27,12 @@ export class GoogleMapComponent implements OnInit {
 
 
     });
+
     this.us.getWashers().subscribe(results => {
       this.locations = results;
     });
 
   }
+
 
 }

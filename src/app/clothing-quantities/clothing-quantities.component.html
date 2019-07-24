@@ -1,8 +1,21 @@
 
 <body>
-  <h3>Place your order</h3>
+  <h3 style="text-align: center;">Place your order!</h3>
 
-  <button class="uppersButton" (click)="showTable1()">Uppers - Click to open</button>
+
+  <div class="TableAndCart">
+
+    <div class="Tabbble">
+  <div class="clothingButtons">
+
+  <button [ngStyle]="{'background-color':this.table1 == true ? '#6bdff0' : '#333333' }" class="uppersButton active" (click)="showTable1()">Upper Body</button>
+
+  <button [ngStyle]="{'background-color':this.table2 == true ? '#6bdff0' : '#333333' }" class="lowersButton" (click)="showTable2()">Lower Body</button>
+
+  <button [ngStyle]="{'background-color':this.table3 == true ? '#6bdff0' : '#333333' }"class="othersButton" (click)="showTable3()">Other Washables</button>
+
+  </div>
+
 
   <table *ngIf="table1">
     <tr>
@@ -22,56 +35,53 @@
           <input  (click)="incrementTshirtCount()" type="button" value="+" class="plus">
         </div>
       </td>
-      <td>${{getTshirtPrice()}}.00</td>
+      <td>${{getTshirtPrice()}}</td>
     </tr>
     <tr>
       <td>Long Sleeve T-Shirt(s)</td>
       <td class="quanityOfClothes">
         <div class="quantity buttons_added">
-          <input type="button" value="-" class="minus">
-          <input type="number" step="1" min="0" max="" name="quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-          <input type="button" value="+" class="plus">
+          <input (click)="decrementLongSleeveCount()" type="button" value="-" class="minus">
+          <input type="number" step="1" min="0" max="" name="quantity" value="{{getLongSleeveCount()}}" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+          <input (click)="incrementLongSleeveCount()" type="button" value="+" class="plus">
         </div>
       </td>
-      <td>$5</td>
+      <td>${{getLongSleevePrice()}}</td>
     </tr>
     <tr>
       <td>Tank Top(s)</td>
       <td class="quanityOfClothes">
         <div class="quantity buttons_added">
-          <input type="button" value="-" class="minus">
-          <input type="number" step="1" min="0" max="" name="quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-          <input type="button" value="+" class="plus">
+          <input (click)="decrementtankTopCount()" type="button" value="-" class="minus">
+          <input type="number" step="1" min="0" max="" name="quantity" value="{{getTankTopCount()}}" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+          <input (click)="incrementtankTopCount()"type="button" value="+" class="plus">
         </div>
       </td>
-      <td>$10</td>
+      <td>${{getTankTopPrice()}}</td>
     </tr>
     <tr>
       <td>Button Down(s)</td>
       <td class="quanityOfClothes">
         <div class="quantity buttons_added">
-          <input type="button" value="-" class="minus">
-          <input type="number" step="1" min="0" max="" name="quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-          <input type="button" value="+" class="plus">
+          <input (click)="decrementbuttonDownCount()" type="button" value="-" class="minus">
+          <input type="number" step="1" min="0" max="" name="quantity" value="{{getButtonDownCount()}}" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+          <input (click)="incrementbuttonDownCount()" type="button" value="+" class="plus">
         </div>
       </td>
-      <td>$0</td>
+      <td>${{getButtonDownPrice()}}</td>
     </tr>
     <tr>
       <td>Sweaters(s)</td>
       <td class="quanityOfClothes">
         <div class="quantity buttons_added">
-          <input type="button" value="-" class="minus">
-          <input type="number" step="1" min="0" max="" name="quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-          <input type="button" value="+" class="plus">
+          <input  (click)="decrementSweaterCount()" type="button" value="-" class="minus">
+          <input type="number" step="1" min="0" max="" name="quantity" value="{{getSweaterCount()}}" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+          <input (click)="incrementSweaterCount()" type="button" value="+" class="plus">
         </div>
       </td>
-      <td>$0</td>
+      <td>${{getSweaterPrice()}}</td>
     </tr>
   </table>
-
-
-  <button class="lowersButton" (click)="showTable2()">Lowers - Click to open</button>
 
 
   <table *ngIf="table2">
@@ -87,61 +97,59 @@
       <td>Shorts</td>
       <td class="quanityOfClothes">
         <div class="quantity buttons_added">
-          <input type="button" value="-" class="minus">
-          <input type="number" step="1" min="0" max="" name="quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-          <input type="button" value="+" class="plus">
+          <input (click)="decrementShortCount()" type="button" value="-" class="minus">
+          <input type="number" step="1" min="0" max="" name="quantity" value="{{getShortCount()}}" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+          <input (click)="incrementShortCount()" type="button" value="+" class="plus">
         </div>
       </td>
-      <td>$0</td>
+      <td>${{getShortPrice()}}</td>
     </tr>
     <tr>
       <td>Pants (Not Jeans)</td>
       <td class="quanityOfClothes">
         <div class="quantity buttons_added">
-          <input type="button" value="-" class="minus">
-          <input type="number" step="1" min="0" max="" name="quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-          <input type="button" value="+" class="plus">
+          <input (click)="decrementPantsCount()" type="button" value="-" class="minus">
+          <input type="number" step="1" min="0" max="" name="quantity" value="{{getPantsCount()}}" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+          <input (click)="incrementPantsCount()" type="button" value="+" class="plus">
         </div>
       </td>
-      <td>$5</td>
+      <td>${{getPantsPrice()}}</td>
     </tr>
     <tr>
       <td>Jeans</td>
       <td class="quanityOfClothes">
         <div class="quantity buttons_added">
-          <input type="button" value="-" class="minus">
-          <input type="number" step="1" min="0" max="" name="quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-          <input type="button" value="+" class="plus">
+          <input (click)="decrementJeansCount()" type="button" value="-" class="minus">
+          <input type="number" step="1" min="0" max="" name="quantity" value="{{getJeansCount()}}" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+          <input (click)="incrementJeansCount()" type="button" value="+" class="plus">
         </div>
       </td>
-      <td>$10</td>
+      <td>${{getJeansPrice()}}</td>
     </tr>
     <tr>
       <td>Under Garments</td>
       <td class="quanityOfClothes">
         <div class="quantity buttons_added">
-          <input type="button" value="-" class="minus">
-          <input type="number" step="1" min="0" max="" name="quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-          <input type="button" value="+" class="plus">
+          <input (click)="decrementUnderCount()" type="button" value="-" class="minus">
+          <input type="number" step="1" min="0" max="" name="quantity" value="{{getUnderCount()}}" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+          <input (click)="incrementUnderCount()" type="button" value="+" class="plus">
         </div>
       </td>
-      <td>$0</td>
+      <td>${{getUnderPrice()}}</td>
     </tr>
     <tr>
       <td>Socks</td>
       <td class="quanityOfClothes">
         <div class="quantity buttons_added">
-          <input type="button" value="-" class="minus">
-          <input type="number" step="1" min="0" max="" name="quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-          <input type="button" value="+" class="plus">
+          <input (click)="decrementSocksCount()" type="button" value="-" class="minus">
+          <input type="number" step="1" min="0" max="" name="quantity" value="{{getSocksCount()}}" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+          <input (click)="incrementSocksCount()" type="button" value="+" class="plus">
         </div>
       </td>
-      <td>$0</td>
+      <td>${{getSocksPrice()}}</td>
     </tr>
   </table>
 
-
-  <button class="othersButton" (click)="showTable3()">Others - Click to open</button>
 
   <table *ngIf="table3">
     <tr>
@@ -156,47 +164,70 @@
       <td>Comforter(s)</td>
       <td class="quanityOfClothes">
         <div class="quantity buttons_added">
-          <input type="button" value="-" class="minus">
-          <input type="number" step="1" min="0" max="" name="quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-          <input type="button" value="+" class="plus">
+          <input (click)="decrementComforterCount()" type="button" value="-" class="minus">
+          <input type="number" step="1" min="0" max="" name="quantity" value="{{getComforterCount()}}" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+          <input (click)="incrementComforterCount()" type="button" value="+" class="plus">
         </div>
       </td>
-      <td>$0</td>
+      <td>${{getComforterPrice()}}</td>
     </tr>
     <tr>
       <td>Blanket(s) / Sheet(s)</td>
       <td class="quanityOfClothes">
         <div class="quantity buttons_added">
-          <input type="button" value="-" class="minus">
-          <input type="number" step="1" min="0" max="" name="quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-          <input type="button" value="+" class="plus">
+          <input (click)="decrementBlanketCount()" type="button" value="-" class="minus">
+          <input type="number" step="1" min="0" max="" name="quantity" value="{{getBlanketCount()}}" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+          <input (click)="incrementBlanketCount()" type="button" value="+" class="plus">
         </div>
       </td>
-      <td>$5</td>
+      <td>${{getBlanketPrice()}}</td>
     </tr>
     <tr>
       <td>Pillow Case(s)</td>
       <td class="quanityOfClothes">
         <div class="quantity buttons_added">
-          <input type="button" value="-" class="minus">
-          <input type="number" step="1" min="0" max="" name="quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-          <input type="button" value="+" class="plus">
+          <input (click)="decrementPillowCaseCount()" type="button" value="-" class="minus">
+          <input type="number" step="1" min="0" max="" name="quantity" value="{{getPillowCaseCount()}}" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+          <input (click)="incrementPillowCaseCount()" type="button" value="+" class="plus">
         </div>
       </td>
-      <td>$10</td>
+      <td>${{getPillowCasePrice()}}</td>
     </tr>
     <tr>
       <td>Table Cloth(s)</td>
       <td class="quanityOfClothes">
         <div class="quantity buttons_added">
-          <input type="button" value="-" class="minus">
-          <input type="number" step="1" min="0" max="" name="quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-          <input type="button" value="+" class="plus">
+          <input (click)="decrementTableClothCount()" type="button" value="-" class="minus">
+          <input type="number" step="1" min="0" max="" name="quantity" value="{{getTableClothCount()}}" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+          <input (click)="incrementTableClothCount()" type="button" value="+" class="plus">
         </div>
       </td>
-      <td>$0</td>
+      <td>${{getTableClothPrice()}}</td>
     </tr>
   </table>
+
+    </div>
+
+
+      <app-user-cart [TshirtCount]="getTshirtCount()"
+                     [longSleeveCount]="getLongSleeveCount()"
+                     [tankTopCount]="getTankTopCount()"
+                     [buttonDownCount]="getButtonDownCount()"
+                     [sweaterCount]="getSweaterCount()"
+                     [shortsCount]="getShortCount()"
+                     [pantsCount]="getPantsCount()"
+                     [jeansCount]="getJeansCount()"
+                     [underwearCount]="getUnderCount()"
+                     [socksCount]="getSocksCount()"
+                     [comforterCount]="getComforterCount()"
+                     [blanketCount]="getBlanketCount()"
+                     [tableClothCount]="getTableClothCount()"
+                     [pillowCaseCount]="getPillowCaseCount()"
+                     [totalPrice]="gettotalPrice()"></app-user-cart>
+
+
+
+  </div>
 
 
 </body>

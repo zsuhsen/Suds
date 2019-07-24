@@ -1,163 +1,91 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="row">
-<div class="column">
-  <h2 style="font-size: 40px; margin: 0px; padding-top: 10px; text-align: center; color: #6bdff0;">Become a Sud!</h2>
-  <p style="font-size: 20px;  text-align: center; color: black;">Join our wait list and receive updates about Suds!</p>
+  <div class="row">
+    <div class="col-50">
+      <h3 style="font-size: 20px;  text-align: center; color: black;">Become A Sud</h3>
+      <p style="font-size: 20px;  text-align: center; color: black;">Join our wait list and receive updates about Suds!</p>
+      <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+      <input type="text" id="fname" name="firstname" placeholder="Enter Full Name">
+      <label for="email"><i class="fa fa-envelope"></i> Email</label>
+      <input type="text" id="email" name="email" placeholder="Enter Email">
+      <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+      <input type="text" id="adr" name="address" placeholder="Enter Street Address">
+      <label for="city"><i class="fa fa-institution"></i> City</label>
+      <input type="text" id="city" name="city" placeholder="Enter City">
 
+      <div class="row">
+        <div class="col-50">
+          <label for="state">State</label>
+          <input type="text" id="state" name="state" placeholder="Enter State">
+        </div>
+        <div class="col-50">
+          <label for="zip">Zip</label>
+          <input type="text" id="zip" name="zip" placeholder="Enter Zipcode">
+        </div>
+      </div>
 
-
-  <form class="create-form" [formGroup]="washerForm" novalidate (ngSubmit)="onSubmit(washerForm.value)">
-
-  <div class="Names">
-
-  <div class="firstName">
-    <mat-label>First name</mat-label>
-    <br>
-    <mat-form-field class="input-style">
-      <input matInput type="text" class="form-control" placeholder="Enter First Name" formControlName="fname">
-    </mat-form-field>
-    <ng-container *ngFor="let validation of validationMessages.fname">
-      <mat-error *ngIf="washerForm.get('fname').hasError(validation.type) && (washerForm.get('fname').dirty || washerForm.get('fname').touched)">{{validation.message}}</mat-error>
-    </ng-container>
-
-  </div>
-  <div class="lastName">
-    <mat-label>Last name</mat-label>
-    <br>
-    <mat-form-field class="input-style">
-      <input matInput type="text" class="form-control" placeholder="Enter Last Name" formControlName="lname">
-    </mat-form-field>
-    <ng-container *ngFor="let validation of validationMessages.lname">
-      <mat-error *ngIf="washerForm.get('lname').hasError(validation.type) && (washerForm.get('lname').dirty || washerForm.get('lname').touched)">{{validation.message}}</mat-error>
-    </ng-container>
-
-  </div>
+      <div class="row">
+        <div class="col-50">
 
 
-  </div>
-
-  <hr>
-
-    <p style="color: black; padding: 10px;">** Optional **</p>
-
-  <div class="optionalQuestion">
-  <div class="employment">
-    <mat-label>Gender</mat-label>
-    <br>
-    <mat-form-field>
-      <select formControlName="gender">
-        <option name="gender" value="male">Male</option>
-        <option name="gender" value="female">Female</option>
-        <option name="gender" value="other">Other</option>
-      </select>
-    </mat-form-field>
-  </div>
-
-  <div class="employment">
-    <mat-label>Employment status</mat-label>
-    <br>
-    <mat-form-field>
-      <select formControlName="employmentStatus">
-        <option name="employmentStatus" value="full">Full Time</option>
-        <option name="employmentStatus" value="part">Part Time</option>
-        <option name="employmentStatus" value="student">Student</option>
-        <option name="employmentStatus" value="none">None</option>
-      </select>
-    </mat-form-field>
-  </div>
+          <label>Available Days</label>
+          <select>
+            <option name="availabilityDays" value="1day">1 day a week</option>
+            <option name="availabilityDays" value="23days">2 to 3 days a week</option>
+            <option name="availabilityDays" value="45days">4 to 5 days a week</option>
+            <option name="availabilityDays" value="67days">6 to 7 days a week</option>
+          </select>
 
 
-  <div class="employment">
-    <mat-label>Income</mat-label>
-    <br>
-    <mat-form-field>
-      <select formControlName="incomeRange">
-        <option name="incomeRange" value="range1">$25,000 or less</option>
-        <option name="incomeRange" value="range2">$25,000 - $50,000</option>
-        <option name="incomeRange" value="range3">$50,000 - $100,000</option>
-        <option name="incomeRange" value="range4">$100,000 plus</option>
-      </select>
-    </mat-form-field>
-  </div>
+        </div>
 
-  <div class="employment">
-    <mat-label>Availability</mat-label>
-    <br>
-    <mat-form-field>
-      <select formControlName="availabilityDays">
-        <option name="availabilityDays" value="1day">1 day a week</option>
-        <option name="availabilityDays" value="23days">2 to 3 days a week</option>
-        <option name="availabilityDays" value="45days">4 to 5 days a week</option>
-        <option name="availabilityDays" value="67days">6 to 7 days a week</option>
-      </select>
-    </mat-form-field>
-    <mat-form-field>
-      <select formControlName="availabilityHours">
-        <option name="availabilityHours" value="hrs02">0-2 hours</option>
-        <option name="availabilityHours" value="hrs35">3-5 hours</option>
-        <option name="availabilityHours" value="hrs68">6-8 hours</option>
-        <option name="availabilityHours" value="hrs9+">9+ hours</option>
-      </select>
-    </mat-form-field>
-  </div>
+        <div class="col-50">
+          <label>Availability Hours</label>
+          <select>
+            <option name="availabilityHours" value="hrs02">0-2 hours</option>
+            <option name="availabilityHours" value="hrs35">3-5 hours</option>
+            <option name="availabilityHours" value="hrs68">6-8 hours</option>
+            <option name="availabilityHours" value="hrs9+">9+ hours</option>
+          </select>
 
-  <div class="employment">
-    <mat-label>How old is your washer and dryer?</mat-label>
-    <br>
-    <mat-form-field>
-      <select formControlName="dryerAgeRange">
-        <option name="dryerAgeRange" value="yr03">0-3 years</option>
-        <option name="dryerAgeRange" value="yr47">4-7 years</option>
-        <option name="dryerAgeRange" value="yr8+">8+ years</option>
-      </select>
-    </mat-form-field>
-  </div>
+        </div>
+      </div>
 
-  <div class="employment">
-    <mat-label>Do you have access to a vehicle?</mat-label>
-    <br>
-    <mat-form-field>
-      <input type="radio" class="radioInput" name="vehicleAccess" value="yes" formControlName="vehicleAccess"> Yes <br>
-      <input type="radio" class="radioInput" name="vehicleAccess" value="no" formControlName="vehicleAccess"> No <br>
-      <input type="radio" class="radioInput" name="vehicleAccess" value="bike" formControlName="vehicleAccess"> Bike? <br>
-    </mat-form-field>
-  </div>
+      <br>
+      <br>
 
-  <div class="employment">
-    <mat-label>Can you carry a minimum of 20 pounds?</mat-label>
-    <br>
-    <mat-form-field>
-      <input type="radio" class="radioInput" value="yes" name="carry20Pounds" formControlName="carry20Pounds"> Yes
-      <input type="radio" class="radioInput" value="no" name="carry20Pounds" formControlName="carry20Pounds"> No
-    </mat-form-field>
-  </div>
 
-  </div>
+      <div class="row">
+        <div class="col-50">
+          <label>Vehicle Access</label>
+          <select>
+            <option name="vehicleAccess" value="yes">Yes</option>
+            <option name="vehicleAccess" value="no">No</option>
+            <option name="vehicleAccess" value="bike">Bike</option>
+          </select>
 
-  <br>
+        </div>
 
-  <div class="NewsLetterAndTerms">
-    <div>
-      <mat-label>Subscribe to our news letter!  </mat-label>
-      <mat-form-field>
+
+        <div class="col-50">
+          <label>Can you carry 20 lbs?</label>
+          <select>
+            <option name="carry20Pounds" value="yes">Yes</option>
+            <option name="carry20Pounds" value="no">No</option>
+          </select>
+
+        </div>
+      </div>
+
+
+      <br>
+      <br>
+
+      <div>
+        <label>Subscribe to our newsletter!</label>
         <input type="checkbox" value="subscribe" formControlName="newsletter">
-      </mat-form-field>
+
+      </div>
+
     </div>
-
-
-    <p style="color: black">
-      By creating an account you agree to our <a href="#"
-                                                 style="color: dodgerblue">Terms & Privacy</a>.
-    </p>
-
   </div>
-  <div class="clearfix">
-
-      <button mat-raised-button class="signupbtn" color="primary" type="submit" [disabled]="!washerForm.valid">Submit</button>
-
-  </div>
-
-</form>
-</div>
-</div>
-

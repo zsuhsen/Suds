@@ -1,37 +1,30 @@
+<body>
 
-<app-google-map></app-google-map>
+<h1 style="margin: 10px">Pick a Washer</h1>
 
-<div class="row">
-  <div class="column">
-  <h1>Pick a Washer</h1>
-
-    <form class="create-form" [formGroup]="pickWasher" novalidate (ngSubmit)="onSubmit(pickWasher.value)">
-      <div *ngFor="let item of items">
-
-
-          <h3>{{capitalizeFirstLetter(item.payload.doc.data().fname)}} {{capitalizeFirstLetter(item.payload.doc.data().lname)}}</h3>
-
-          <h4 class="tab">Zipcode: {{item.payload.doc.data().zipcode}}</h4>
-
-
-          <h4 class="tab">Age: {{item.payload.doc.data().age}}</h4>
-
-        <mat-label class="tab">Pick Me!</mat-label>
-        <input type="radio" class="radioInput" name="washerId" value="{{item.payload.doc.id}}">
-
+    <div class="card" *ngFor="let item of items">
+      <div class="washerImage">
+        <div *ngIf="item.payload.doc.data().imageURL != null">
+          <img src="{{item.payload.doc.data().imageURL}}" height="130 px" width="auto" border-radius="50%">
         </div>
-      <button class="signupbtn" color="primary" type="submit" [disabled]="!pickWasher.valid">Submit</button>
-    </form>
+        <div *ngIf="item.payload.doc.data().imageURL == null">
+          <img src="{{defaultProfile}}" height="130 px" width="auto" border-radius="50%">
+        </div>
+      </div>
+      <h3>{{capitalizeFirstLetter(item.payload.doc.data().fname)}} {{capitalizeFirstLetter(item.payload.doc.data().lname)}}</h3>
+      <p>Distance = 3 miles away</p>
+      <button>Select Me!</button>
 
+      <div class="middle">
+        <div class="text">You Picked {{capitalizeFirstLetter(item.payload.doc.data().fname)}}</div>
+      </div>
 
-
-  </div>
-</div>
+    </div>
 
 
 <app-clothing-quantities [washerIdchild]="message"></app-clothing-quantities>
 
-
+</body>
 
 
 
