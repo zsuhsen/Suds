@@ -17,7 +17,7 @@ export class UploadService {
 
   private basePath = '/uploads';
   private uploadTask: firebase.storage.UploadTask;
-  pushUpload(upload: Upload, uid, usertype) {
+  pushUpload(upload: Upload, uid) {
     const storageRef = firebase.storage().ref();
     this.uploadTask = storageRef.child(`${this.basePath}/${upload.file.name}`).put(upload.file);
     this.uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
@@ -31,11 +31,7 @@ export class UploadService {
       upload.url = this.uploadTask.snapshot.downloadURL;
       this.uploadTask.snapshot.ref.getDownloadURL().then(downloadUrl => {
         const imageUrl = downloadUrl;
-        if (usertype === 'washer') {
-          this.us.addImageURL(imageUrl, uid);
-        } else {
-          this.us.addUserImageURL(imageUrl, uid);
-        }
+        this.us.addUserImageURL(imageUrl, uid);
       });
       upload.name = upload.file.name;
       this.saveFileData(upload);

@@ -44,6 +44,8 @@ import { GoogleMapComponent } from './google-map/google-map.component';
 import { WasherInfoComponent } from './washer-info/washer-info.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { UserCartComponent } from './user-cart/user-cart.component';
+import { BagCheckoutComponent } from './bag-checkout/bag-checkout.component';
+import { ClothingCheckoutComponent } from './clothing-checkout/clothing-checkout.component';
 
 
 export const firebaseConfig = {
@@ -84,6 +86,8 @@ export const firebaseConfig = {
     WasherInfoComponent,
     ImageUploadComponent,
     UserCartComponent,
+    BagCheckoutComponent,
+    ClothingCheckoutComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

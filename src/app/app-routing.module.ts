@@ -11,6 +11,8 @@ import {EmailComponent} from './email/email.component';
 import {ProfileComponent} from './profile/profile.component';
 import {RegistrationInfoComponent} from './registration-info/registration-info.component';
 import {WasherInfoComponent} from './washer-info/washer-info.component';
+import {BagCheckoutComponent} from './bag-checkout/bag-checkout.component';
+import {ClothingCheckoutComponent} from './clothing-checkout/clothing-checkout.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -21,7 +23,9 @@ const routes: Routes = [
   {path: 'aboutus', component: AboutUsComponent},
   {path: 'emaillog', component: EmailComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'washerinfo', component: WasherInfoComponent}
+  {path: 'washerinfo', component: WasherInfoComponent},
+  {path: 'bagcheckout', component: BagCheckoutComponent},
+  {path: 'clothingcheckout', component: ClothingCheckoutComponent}
 ];
 
 @NgModule({

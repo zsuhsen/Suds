@@ -2,15 +2,17 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 import { auth } from 'firebase';
+import {collectExternalReferences} from '@angular/compiler';
+import {UserServiceService} from './user-service.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(public afAuth: AngularFireAuth) { }
+  constructor(public afAuth: AngularFireAuth, public us: UserServiceService) { }
 
 
-  //returns state of user...logged in or not
+  // returns state of user...logged in or not
   getLoggedInUser() {
 
     return this.afAuth.authState;
@@ -25,6 +27,9 @@ export class AuthService {
         .signInWithPopup(provider)
         .then(res => {
           resolve(res);
+          this.getLoggedInUser().subscribe(user => {
+            this.us.createBaseUser(user);
+          });
         }, err => {
           console.log(err);
           reject(err);
@@ -39,6 +44,9 @@ export class AuthService {
         .signInWithPopup(provider)
         .then(res => {
           resolve(res);
+          this.getLoggedInUser().subscribe(user => {
+            this.us.createBaseUser(user);
+          });
         }, err => {
           console.log(err);
           reject(err);
@@ -55,6 +63,9 @@ export class AuthService {
         .signInWithPopup(provider)
         .then(res => {
           resolve(res);
+          this.getLoggedInUser().subscribe(user => {
+            this.us.createBaseUser(user);
+          });
         }, err => {
           console.log(err);
           reject(err);
@@ -66,6 +77,9 @@ export class AuthService {
       firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
         .then(res => {
           resolve(res);
+          this.getLoggedInUser().subscribe(user => {
+            this.us.createBaseUser(user);
+          });
         }, err => reject(err));
     });
   }

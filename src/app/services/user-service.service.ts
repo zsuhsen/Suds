@@ -62,6 +62,34 @@ export class UserServiceService {
         userId: uid
       });
     }
+    createBaseUser(user) {
+      if (this.getUserDoc(user.uid) == null) {
+        return this.db.collection('users').add({
+          name: user.displayName,
+          email: user.email,
+          userId: user.uid,
+          userType: 'user',
+          imageURL: null
+        });
+      }
+    }
+    updateForWasherInfo(value, uid) {
+      let docId: any;
+      this.getUserDoc(uid).subscribe(result => {
+        docId = result.pop().payload.doc.id;
+        return this.db.collection('users').doc(docId).update({
+          address: 'address',
+          city: 'city',
+          state: 'state',
+          zipcode: 'zip',
+          phonenumber: 'phonenum',
+          dob: 'birthdate',
+          ssn: 'ssn',
+          dlphoto: 'imageurl',
+          newsLetter: 'subscribe'
+        });
+      });
+    }
   usertest(uid) {
     let docId: any;
     this.getUserDoc(uid).subscribe(result => {
@@ -126,43 +154,11 @@ export class UserServiceService {
   }
   addUserImageURL(image, uid) {
     let docId: any;
-    let values: any;
     this.getUserDoc(uid).subscribe(result => {
       docId = result.pop().payload.doc;
-      values = docId.data();
       this.db.collection(`users`).doc(docId.id).set({
-        fname: values.fname,
-        lname: values.lname,
-        userType: 'user', /** we want this to show what type of user they are */
-        userId: values.userId,
         imageURL: image
-      });
-    });
-  }
-  addImageURL(image, uid) {
-    let docId: any;
-    let values: any;
-    this.getUserDoc(uid).subscribe(result => {
-      docId = result.pop().payload.doc;
-      values = docId.data();
-      this.db.collection(`users`).doc(docId.id).set({
-        fname: values.fname,
-        lname: values.lname,
-        gender: values.gender,
-        employmentStatus: values.employmentStatus,
-        incomeRange: values.incomeRange,
-        availabilityDays: values.availabilityDays,
-        availabilityHours: values.availabilityHours,
-        dryerAgeRange: values.dryerAgeRange,
-        vehicleAccess: values.vehicleAccess,
-        carry20Pounds: values.carry20Pounds,
-        newsletter: values.newsletter,
-        userType: 'washer', /** we want this to show what type of user they are */
-        userId: values.userId,
-        latitude: values.latitude,
-        longitude: values.longitude,
-        imageURL: image
-      });
+      }, {merge: true});
     });
   }
   getUserDoc(uid) {

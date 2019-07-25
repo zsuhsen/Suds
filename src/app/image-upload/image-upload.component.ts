@@ -24,10 +24,6 @@ export class ImageUploadComponent implements OnInit {
       .subscribe( user => {
         console.log( user );
         this.user = user;
-        this.us.getUserDoc(this.user.uid).subscribe(result => {
-          this.userInfo = result;
-          this.usertype = this.userInfo[0].payload.doc.data().userType;
-        });
       });
   }
   detectFiles(event) {
@@ -37,7 +33,7 @@ export class ImageUploadComponent implements OnInit {
   uploadSingle() {
     const file = this.selectedFiles.item(0);
     this.currentUpload = new Upload(file);
-    this.upSvc.pushUpload(this.currentUpload, this.user.uid, this.usertype);
+    this.upSvc.pushUpload(this.currentUpload, this.user.uid);
   }
 
 
