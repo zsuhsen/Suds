@@ -63,6 +63,20 @@ export class UserServiceService {
       });
     }
     createBaseUser(uid, n, e) {
+        return this.db.collection('users').add({
+          name: n,
+          email: e,
+          userId: uid,
+          userType: 'user',
+          imageURL: null
+        });
+    }
+  createGoogleBaseUser(uid, n, e) {
+    let docId: any;
+    this.getUserDoc(uid).subscribe(result => {
+      docId = result.pop().payload.doc.id;
+      this.db.collection('users').doc(docId).get().subscribe(docsnapshot => {
+        if (!docsnapshot.exists) {
           return this.db.collection('users').add({
             name: n,
             email: e,
@@ -70,14 +84,8 @@ export class UserServiceService {
             userType: 'user',
             imageURL: null
           });
-    }
-  createGoogleBaseUser(uid, n, e) {
-    return this.db.collection('users').add({
-      name: n,
-      email: e,
-      userId: uid,
-      userType: 'user',
-      imageURL: null
+        }
+      });
     });
   }
     updateForWasherInfo(value, uid) {
