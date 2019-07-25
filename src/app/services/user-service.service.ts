@@ -62,17 +62,24 @@ export class UserServiceService {
         userId: uid
       });
     }
-    createBaseUser(user) {
-      if (this.getUserDoc(user.uid) == null) {
-        return this.db.collection('users').add({
-          name: user.displayName,
-          email: user.email,
-          userId: user.uid,
-          userType: 'user',
-          imageURL: null
-        });
-      }
+    createBaseUser(uid, n, e) {
+          return this.db.collection('users').add({
+            name: n,
+            email: e,
+            userId: uid,
+            userType: 'user',
+            imageURL: null
+          });
     }
+  createGoogleBaseUser(uid, n, e) {
+    return this.db.collection('users').add({
+      name: n,
+      email: e,
+      userId: uid,
+      userType: 'user',
+      imageURL: null
+    });
+  }
     updateForWasherInfo(value, uid) {
       let docId: any;
       this.getUserDoc(uid).subscribe(result => {

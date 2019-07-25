@@ -28,7 +28,7 @@ export class AuthService {
         .then(res => {
           resolve(res);
           this.getLoggedInUser().subscribe(user => {
-            this.us.createBaseUser(user);
+            this.us.createBaseUser(user.uid, user.displayName, user.email);
           });
         }, err => {
           console.log(err);
@@ -45,7 +45,7 @@ export class AuthService {
         .then(res => {
           resolve(res);
           this.getLoggedInUser().subscribe(user => {
-            this.us.createBaseUser(user);
+            this.us.createBaseUser(user.uid, user.displayName, user.email);
           });
         }, err => {
           console.log(err);
@@ -63,9 +63,6 @@ export class AuthService {
         .signInWithPopup(provider)
         .then(res => {
           resolve(res);
-          this.getLoggedInUser().subscribe(user => {
-            this.us.createBaseUser(user);
-          });
         }, err => {
           console.log(err);
           reject(err);
@@ -78,7 +75,7 @@ export class AuthService {
         .then(res => {
           resolve(res);
           this.getLoggedInUser().subscribe(user => {
-            this.us.createBaseUser(user);
+            this.us.createBaseUser(user.uid, user.displayName, user.email);
           });
         }, err => reject(err));
     });
