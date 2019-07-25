@@ -37,7 +37,8 @@
   <div class="column">
 
   	  <img src="assets/images/looking for opportunities.jpg" alt="Clean Laundry" class="mainImageOne">
-      <a class="NeedASud" routerLink="/washer">Looking for opportunities?</a>
+      <div *ngIf="user; else elseBlock"><a class="NeedASud" routerLink="/washer">Looking for opportunities?</a></div>
+      <ng-template #elseBlock><a class="NeedASud" routerLink="/emaillog">Looking for opportunities?</a></ng-template>
       <div class="overlay">
         <div class="text">Be A Sud</div>
       </div>

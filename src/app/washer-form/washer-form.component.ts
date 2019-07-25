@@ -11,6 +11,8 @@ import {AuthService} from '../services/auth.service';
   styleUrls: ['./washer-form.component.css']
 })
 export class WasherFormComponent implements OnInit {
+
+  washerFormCounter: number = 0;
   user: firebase.User;
   washerForm: FormGroup;
   validationMessages = {
@@ -48,6 +50,21 @@ export class WasherFormComponent implements OnInit {
 
       });
   }
+
+  incrementWasherFormCounter() {
+
+    this.washerFormCounter++;
+
+  }
+
+  decrementWasherFormCounter() {
+
+    this.washerFormCounter--;
+
+  }
+
+
+
   createForm() {
     this.washerForm = this.fb.group({
       fname: ['', Validators.required ],

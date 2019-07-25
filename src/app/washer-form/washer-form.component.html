@@ -1,18 +1,31 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<div class="container" [ngStyle]="{'margin-top':this.washerFormCounter > 0 ? '100px' : '0px' }">
   <div class="row">
     <div class="col-50">
+      <div *ngIf="washerFormCounter == 0">
       <h3 style="font-size: 20px;  text-align: center; color: black;">Become A Sud</h3>
       <p style="font-size: 20px;  text-align: center; color: black;">Join our wait list and receive updates about Suds!</p>
-      <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-      <input type="text" id="fname" name="firstname" placeholder="Enter Full Name">
-      <label for="email"><i class="fa fa-envelope"></i> Email</label>
-      <input type="text" id="email" name="email" placeholder="Enter Email">
-      <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-      <input type="text" id="adr" name="address" placeholder="Enter Street Address">
-      <label for="city"><i class="fa fa-institution"></i> City</label>
-      <input type="text" id="city" name="city" placeholder="Enter City">
-
+      <div class="row">
+      <div class="col-50">
+        <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Enter Full Name" [(ngModel)]="user.displayName" autocomplete="on">
+      </div>
+      <div class="col-50">
+        <label for="email"><i class="fa fa-envelope"></i> Email</label>
+        <input type="text" id="email" name="email" placeholder="Enter Email" [(ngModel)]="user.email" autocomplete="on">
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-50">
+          <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+          <input type="text" id="adr" name="address" placeholder="Enter Street Address">
+        </div>
+        <div class="col-50">
+          <label for="city"><i class="fa fa-institution"></i> City</label>
+          <input type="text" id="city" name="city" placeholder="Enter City">
+        </div>
+      </div>
       <div class="row">
         <div class="col-50">
           <label for="state">State</label>
@@ -24,68 +37,60 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-50">
+      <br>
+      <br>
 
+      <div class="newsletterblock">
+        <input style="display: inline-block; padding: 20px; cursor: pointer;" type="checkbox" checked value="subscribe" formControlName="newsletter">
+        <label style="display: inline-block;  padding-left: 5px">Subscribe to our newsletter!</label>
 
-          <label>Available Days</label>
-          <select>
-            <option name="availabilityDays" value="1day">1 day a week</option>
-            <option name="availabilityDays" value="23days">2 to 3 days a week</option>
-            <option name="availabilityDays" value="45days">4 to 5 days a week</option>
-            <option name="availabilityDays" value="67days">6 to 7 days a week</option>
-          </select>
-
-
-        </div>
-
-        <div class="col-50">
-          <label>Availability Hours</label>
-          <select>
-            <option name="availabilityHours" value="hrs02">0-2 hours</option>
-            <option name="availabilityHours" value="hrs35">3-5 hours</option>
-            <option name="availabilityHours" value="hrs68">6-8 hours</option>
-            <option name="availabilityHours" value="hrs9+">9+ hours</option>
-          </select>
-
-        </div>
       </div>
 
-      <br>
-      <br>
-
-
-      <div class="row">
-        <div class="col-50">
-          <label>Vehicle Access</label>
-          <select>
-            <option name="vehicleAccess" value="yes">Yes</option>
-            <option name="vehicleAccess" value="no">No</option>
-            <option name="vehicleAccess" value="bike">Bike</option>
-          </select>
-
-        </div>
-
-
-        <div class="col-50">
-          <label>Can you carry 20 lbs?</label>
-          <select>
-            <option name="carry20Pounds" value="yes">Yes</option>
-            <option name="carry20Pounds" value="no">No</option>
-          </select>
-
-        </div>
       </div>
 
 
-      <br>
-      <br>
+      <div *ngIf="washerFormCounter == 1">
 
-      <div>
-        <label>Subscribe to our newsletter!</label>
-        <input type="checkbox" value="subscribe" formControlName="newsletter">
+        <div class="row">
+          <div class="col-50">
+            <label>Social Security Number</label>
+            <input type="text" name="SSN" placeholder="Enter Social">
+          </div>
+          <div class="col-50">
+            <label>Date of Birth</label>
+            <input type="text" name="DOB" placeholder="Enter Date of Birth">
+          </div>
+        </div>
 
       </div>
+
+
+
+      <div style="text-align: center;" *ngIf="washerFormCounter == 2">
+
+
+            <div>
+              <h4>Upload photo of Drivers License</h4>
+              <app-image-upload></app-image-upload>
+            </div>
+
+      </div>
+
+
+      <div style="float:right;">
+        <div *ngIf="washerFormCounter == 2; else elseBlock"><button type="button">Submit</button></div>
+        <ng-template #elseBlock><button type="button"(click)="incrementWasherFormCounter()">Next</button></ng-template>
+      </div>
+
+
+      <div style="float:right;">
+        <div *ngIf="washerFormCounter == 0; else elseBlockOne"><button type="button" disabled>Previous</button></div>
+        <ng-template #elseBlockOne><button type="button" (click)="decrementWasherFormCounter()">Previous</button></ng-template>
+      </div>
+
 
     </div>
   </div>
+
+</div>
+

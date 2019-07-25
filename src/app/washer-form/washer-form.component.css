@@ -1,4 +1,21 @@
 
+.container {
+
+  background-color: #eeeeee;
+  width: 80%;
+  margin: 0 0 0 10%;
+
+
+}
+
+.newsletterblock {
+
+  display: inline-block;
+
+}
+
+
+
 * {
   box-sizing: border-box;
 }
@@ -97,3 +114,5 @@ span.price {
     margin-bottom: 20px;
   }
 }
+
+
