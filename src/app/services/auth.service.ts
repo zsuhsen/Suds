@@ -63,6 +63,11 @@ export class AuthService {
         .signInWithPopup(provider)
         .then(res => {
           resolve(res);
+          if (res.additionalUserInfo.isNewUser) {
+            this.getLoggedInUser().subscribe(user => {
+              this.us.createBaseUser(user.uid, user.displayName, user.email);
+            });
+          }
         }, err => {
           console.log(err);
           reject(err);

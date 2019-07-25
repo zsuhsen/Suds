@@ -63,46 +63,32 @@ export class UserServiceService {
       });
     }
     createBaseUser(uid, n, e) {
-        return this.db.collection('users').add({
+        const userRef = this.db.doc(`users/${uid}`);
+        const data = {
           name: n,
           email: e,
           userId: uid,
           userType: 'user',
           imageURL: null
-        });
+        };
+        return userRef.set(data, {merge: true});
     }
-  createGoogleBaseUser(uid, n, e) {
-    let docId: any;
-    this.getUserDoc(uid).subscribe(result => {
-      docId = result.pop().payload.doc.id;
-      this.db.collection('users').doc(docId).get().subscribe(docsnapshot => {
-        if (!docsnapshot.exists) {
-          return this.db.collection('users').add({
-            name: n,
-            email: e,
-            userId: uid,
-            userType: 'user',
-            imageURL: null
-          });
-        }
-      });
-    });
+  addUserImageURL(image, uid) {
+    return this.db.collection(`users`).doc(uid).set({
+      imageURL: image
+    }, {merge: true});
   }
     updateForWasherInfo(value, uid) {
-      let docId: any;
-      this.getUserDoc(uid).subscribe(result => {
-        docId = result.pop().payload.doc.id;
-        return this.db.collection('users').doc(docId).update({
-          address: 'address',
-          city: 'city',
-          state: 'state',
-          zipcode: 'zip',
-          phonenumber: 'phonenum',
-          dob: 'birthdate',
-          ssn: 'ssn',
-          dlphoto: 'imageurl',
-          newsLetter: 'subscribe'
-        });
+      return this.db.collection(`users`).doc(uid).update({
+        address: 'address',
+        city: 'city',
+        state: 'state',
+        zipcode: 'zip',
+        phonenumber: 'phonenum',
+        dob: 'birthdate',
+        ssn: 'ssn',
+        dlphoto: 'imageurl',
+        newsLetter: 'subscribe'
       });
     }
   usertest(uid) {
@@ -167,20 +153,9 @@ export class UserServiceService {
       });
     });
   }
-  addUserImageURL(image, uid) {
-    let docId: any;
-    this.getUserDoc(uid).subscribe(result => {
-      docId = result.pop().payload.doc;
-      this.db.collection(`users`).doc(docId.id).set({
-        imageURL: image
-      }, {merge: true});
-    });
-  }
   getUserDoc(uid) {
     return this.db.collection('users', ref => ref.where('userId', '==', uid)).snapshotChanges();
   }
-    updateUser() {}
-    deleteUser() {}
     getWashers() {
       return this.db.collection('users', ref => ref.where('userType', '==', 'washer')).snapshotChanges();
     }

@@ -29,17 +29,16 @@ export class UploadService {
       },
       () => {
       upload.url = this.uploadTask.snapshot.downloadURL;
-      this.uploadTask.snapshot.ref.getDownloadURL().then(downloadUrl => {
-        const imageUrl = downloadUrl;
-        this.us.addUserImageURL(imageUrl, uid);
-      });
       upload.name = upload.file.name;
-      this.saveFileData(upload);
+      this.saveFileData(upload, uid);
       });
   }
   // Writes the file details to the realtime db
-  private saveFileData(upload: Upload) {
+  private saveFileData(upload: Upload, uid) {
     this.db.list(`${this.basePath}/`).push(upload.url);
+    this.uploadTask.snapshot.ref.getDownloadURL().then(downloadUrl => {
+      this.us.addUserImageURL(downloadUrl, uid);
+    });
   }
   deleteUpload(upload: Upload) {
     this.deleteFileData(upload.$key)

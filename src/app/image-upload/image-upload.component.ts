@@ -27,6 +27,8 @@ export class ImageUploadComponent implements OnInit {
       });
   }
   detectFiles(event) {
+    this.currentUpload = null;
+    this.selectedFiles = null;
     this.selectedFiles = event.target.files;
   }
 
