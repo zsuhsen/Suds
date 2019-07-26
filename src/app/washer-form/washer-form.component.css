@@ -1,13 +1,4 @@
 
-.container {
-
-  background-color: #eeeeee;
-  width: 80%;
-  margin: 0 0 0 10%;
-
-
-}
-
 .newsletterblock {
 
   display: inline-block;
@@ -49,19 +40,40 @@
   padding: 0 16px;
 }
 
-.container {
-  background-color: #f2f2f2;
-  padding: 5px 20px 15px 20px;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
+.wholeContainer {
+
+  width: 100%;
+  background-color: #eeeeee;
+
 }
 
-input[type=text] {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 12px;
-  border: 1px solid #ccc;
+.leftSideContainer {
+
+  background-color: #eeeeee;
+  float: left;
+  width: 45%;
+  text-align: left;
+  padding: 20px;
+  height: 500px;
+
+
+}
+
+.rightSidecontainer {
+  float: left;
+  width: 55%;
+  background-color: #eeeeee;
+  padding: 20px;
   border-radius: 3px;
+  height: 500px;
+}
+
+input[type=text], input[type=date], input[type=tel], input[type=email] {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 12px;
+  border: 1px solid #6bdff0;
+  border-radius: 15px;
 }
 
 label {
@@ -114,5 +126,48 @@ span.price {
     margin-bottom: 20px;
   }
 }
+
+.NextPrevButton {
+
+  padding: 8px;
+  font-size: 17px;
+  background-color: black;
+  color: #6bdff0;
+  width: 100px;
+  height: 50px;
+  border-radius: 15px;
+  font-family: Didot;
+  cursor: pointer;
+
+
+}
+
+.NextPrevButtonDisabled {
+
+  padding: 8px;
+  font-size: 17px;
+  background-color: black;
+  color: #6bdff0;
+  width: 100px;
+  height: 50px;
+  opacity: 0.3;
+  border-radius: 15px;
+  font-family: Didot;
+
+}
+
+.becomeASudHeader {
+
+  font-size: 45px;
+  font-family: Didot;
+  color: black;
+  margin: 0;
+
+
+
+
+}
+
+input,button:focus { outline: none; }
 
 

@@ -11,12 +11,13 @@
   <label for="toggle">&#9776;</label>
   <input type="checkbox" id="toggle" (change)="heightUpdate($event)"/>
   <div class="menu">
-    <a routerLink="/order">Place An Order</a>
-    <a *ngIf="!user" routerLink="/washerinfo">Want to become a washer?</a>
+    <a routerLink="/order"><i class='fas fa-shopping-basket'></i> Place an order</a>
+    <a *ngIf="!user" routerLink="/washerinfo"><i class="material-icons" style="display: inline-flex; vertical-align: sub; align-items: center; justify-content: center;">local_laundry_service</i> Become a washer</a>
     <a *ngIf="!user" routerLink="/login">Login</a>
     <a *ngIf="!user" routerLink="/emaillog">Join Suds</a>
-    <a *ngIf="user" (click)="logout()">Logout</a>
-    <a *ngIf="user" routerLink="/profile">Profile</a>
+    <a *ngIf="user" routerLink="/profile"><i class='fas fa-user-circle'></i> Profile</a>
+    <a *ngIf="user" (click)="logout()"><i class='fas fa-sign-out-alt'></i> Logout</a>
+
 
   </div>
 
