@@ -177,8 +177,10 @@
           <p>Or:</p>
         </div>
 
+        <input type="text" name="name" formControlName="name" placeholder="Full Name" required>
         <input type="text" name="email" formControlName="email" placeholder="Email" required>
         <input type="password" name="password" formControlName="password" placeholder="Password" required>
+        <input type="text" name="zipCode" formControlName="zipCode" placeholder="ZipCode" required>
         <label class="error">{{errorMessage}}</label>
         <label class="success">{{successMessage}}</label>
         <input (click)="tryRegister(registerForm.value)" type="submit" value="Join Suds">

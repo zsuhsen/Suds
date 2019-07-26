@@ -18,12 +18,12 @@
           </div>
         </div>
         <!--Question mark is so program wont error if user doesnt have a username-->
-        <div *ngIf="user?.displayName != null">
+        <div *ngIf="user?.displayName!= null">
           <h3> Name: {{user?.displayName}}</h3>
         </div>
         <div *ngIf="user?.displayName == null">
           <div *ngFor="let userstuff of userInfo">
-            <h3> Name: {{userstuff.payload.doc.data().fname}} {{userstuff.payload.doc.data().lname}}</h3>
+            <h3> Name: {{userstuff.payload.doc.data().name}}</h3>
           </div>
         </div>
         <h3> User Email: {{user?.email}}</h3>

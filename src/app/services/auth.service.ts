@@ -80,7 +80,7 @@ export class AuthService {
         .then(res => {
           resolve(res);
           this.getLoggedInUser().subscribe(user => {
-            this.us.createBaseUser(user.uid, user.displayName, user.email);
+            this.us.createBaseUser(user.uid, value.name, user.email);
           });
         }, err => reject(err));
     });

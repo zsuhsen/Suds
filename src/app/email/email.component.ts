@@ -65,7 +65,8 @@ export class EmailComponent implements OnInit {
   createForm() {
     this.registerForm = this.fb.group({
       email: ['', Validators.required ],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      name: ['', Validators.required]
     });
   }
 
