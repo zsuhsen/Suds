@@ -40,6 +40,29 @@ export class UploadService {
       this.us.addUserImageURL(downloadUrl, uid);
     });
   }
+  pushDLUpload(upload: Upload, uid) {
+    const storageRef = firebase.storage().ref();
+    this.uploadTask = storageRef.child(`${this.basePath}/${upload.file.name}`).put(upload.file);
+    this.uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+      (snapshot) => {
+        upload.progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      },
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        upload.url = this.uploadTask.snapshot.downloadURL;
+        upload.name = upload.file.name;
+        this.saveDLFileData(upload, uid);
+      });
+  }
+  // Writes the file details to the realtime db
+  private saveDLFileData(upload: Upload, uid) {
+    this.db.list(`${this.basePath}/`).push(upload.url);
+    this.uploadTask.snapshot.ref.getDownloadURL().then(downloadUrl => {
+      this.us.addDLImageURL(downloadUrl, uid);
+    });
+  }
   deleteUpload(upload: Upload) {
     this.deleteFileData(upload.$key)
       .then( () => {

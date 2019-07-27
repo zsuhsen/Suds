@@ -34,25 +34,26 @@
 <div class="rightSidecontainer">
   <div class="row">
     <div class="col-50">
+      <form [formGroup]="washerForm">
       <div *ngIf="washerFormCounter == 0">
       <div class="row">
       <div class="col-50">
-        <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Enter Full Name" [(ngModel)]="user.displayName" autocomplete="on">
+        <label for="name"><i class="fa fa-user"></i> Full Name</label>
+        <input type="text" id="name" name="name" formControlName="name" placeholder="Enter Full Name" [(ngModel)]="user.displayName" autocomplete="on">
       </div>
       <div class="col-50">
         <label for="email"><i class="fa fa-envelope"></i> Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter Email" [(ngModel)]="user.email" autocomplete="on">
+        <input type="email" id="email" name="email" formControlName="email" placeholder="Enter Email" [(ngModel)]="user.email" autocomplete="on">
       </div>
     </div>
         <div class="row">
           <div class="col-50">
             <label><i class='fas fa-phone'></i> Phone Number</label>
-            <input type="tel" name="phoneNumber" placeholder="Enter Phone Number" required>
+            <input type="tel" name="phonenumber" formControlName="phonenumber" placeholder="Enter Phone Number" required>
           </div>
           <div class="col-50">
             <label><i class='fas fa-calendar-alt'></i> Date of Birth</label>
-            <input type="date" name="DOB" placeholder="mm//dd//yy">
+            <input type="date" name="dob" formControlName="dob" placeholder="mm//dd//yy">
           </div>
         </div>
 
@@ -60,21 +61,21 @@
       <div class="row">
         <div class="col-50">
           <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-          <input type="text" id="adr" name="address" placeholder="Enter Street Address">
+          <input type="text" id="adr" name="address" formControlName="address" placeholder="Enter Street Address">
         </div>
         <div class="col-50">
           <label for="city"><i class="fa fa-institution"></i> City</label>
-          <input type="text" id="city" name="city" placeholder="Enter City">
+          <input type="text" id="city" name="city" formControlName="city" placeholder="Enter City">
         </div>
       </div>
       <div class="row">
         <div class="col-50">
           <label for="state">State</label>
-          <input type="text" id="state" name="state" placeholder="Enter State">
+          <input type="text" id="state" name="state" formControlName="state" placeholder="Enter State">
         </div>
         <div class="col-50">
           <label for="zip">Zip</label>
-          <input type="text" id="zip" name="zip" placeholder="Enter Zipcode">
+          <input type="text" id="zip" name="zip" formControlName="zip" placeholder="Enter Zipcode">
         </div>
       </div>
 
@@ -82,7 +83,7 @@
       <br>
 
       <div class="newsletterblock">
-        <input style="display: inline-block; width: 20px; height: 16px; padding: 20px; cursor: pointer;" type="checkbox" checked value="subscribe" formControlName="newsletter">
+        <input style="display: inline-block; width: 20px; height: 16px; padding: 20px; cursor: pointer;" type="checkbox" checked value="subscribe" name="newsletter" formControlName="newsletter">
         <label style="display: inline-block;  font-size: 20px; padding-left: 5px">Subscribe to our newsletter!</label>
 
       </div>
@@ -100,7 +101,7 @@
         <div class="row">
           <div class="col-50">
             <label>Social Security Number</label>
-            <input type="text" name="SSN" placeholder="Enter Social">
+            <input type="text" name="ssn" formControlName="ssn"  placeholder="Enter Social">
             <br>
             <p>Personal information is protected with bank-level security</p>
             <p>No credit check - credit won't be affected</p>
@@ -118,14 +119,14 @@
 
             <div>
               <h4>Upload photo of Drivers License</h4>
-              <app-image-upload></app-image-upload>
+              <app-image-upload [isDLPhoto]="true"></app-image-upload>
             </div>
 
       </div>
 
 
       <div style="float:right;">
-        <div *ngIf="washerFormCounter == 2; else elseBlockNext"><button class="NextPrevButton" type="button">Submit</button></div>
+        <div *ngIf="washerFormCounter == 2; else elseBlockNext"><button class="NextPrevButton" type="submit" (click)="onSubmit(washerForm.value)">Submit</button></div>
         <ng-template #elseBlockNext><button class="NextPrevButton" type="button"(click)="incrementWasherFormCounter()">Next</button></ng-template>
       </div>
 
@@ -135,8 +136,9 @@
         <ng-template #elseBlockPrev><button class="NextPrevButton" type="button" (click)="decrementWasherFormCounter()">Previous</button></ng-template>
       </div>
 
-
+      </form>
     </div>
+
   </div>
 
 </div>

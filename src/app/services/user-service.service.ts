@@ -62,6 +62,9 @@ export class UserServiceService {
         userId: uid
       });
     }
+  /**
+   * creating user document when user joins the Suds
+   */
     createBaseUser(uid, n, e) {
         const userRef = this.db.doc(`users/${uid}`);
         const data = {
@@ -73,22 +76,39 @@ export class UserServiceService {
         };
         return userRef.set(data, {merge: true});
     }
+
+  /**
+   * current user image url for users profile photo
+   */
   addUserImageURL(image, uid) {
     return this.db.collection(`users`).doc(uid).set({
       imageURL: image
     }, {merge: true});
   }
+  /**
+   * current user image url for users profile photo
+   */
+  addDLImageURL(image, uid) {
+    return this.db.collection(`users`).doc(uid).set({
+      dlphoto: image
+    }, {merge: true});
+  }
+
+  /**
+   * current washer form updates for users
+   */
     updateForWasherInfo(value, uid) {
       return this.db.collection(`users`).doc(uid).update({
-        address: 'address',
-        city: 'city',
-        state: 'state',
-        zipcode: 'zip',
-        phonenumber: 'phonenum',
-        dob: 'birthdate',
-        ssn: 'ssn',
-        dlphoto: 'imageurl',
-        newsLetter: 'subscribe'
+        name: value.name,
+        address: value.address,
+        city: value.city,
+        state: value.state,
+        zip: value.zip,
+        phonenumber: value.phonenumber,
+        dob: value.dob,
+        ssn: value.ssn,
+        newsLetter: value.newsletter,
+        userType: 'washer'
       });
     }
   usertest(uid) {
@@ -159,7 +179,4 @@ export class UserServiceService {
     getWashers() {
       return this.db.collection('users', ref => ref.where('userType', '==', 'washer')).snapshotChanges();
     }
-  getUsers() {
-    return this.db.collection('users', ref => ref.where('userType', '==', 'user')).snapshotChanges();
-  }
 }

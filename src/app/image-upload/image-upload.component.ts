@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AuthService} from '../services/auth.service';
 import {UserServiceService} from '../services/user-service.service';
 import {Upload} from '../upload';
@@ -14,8 +14,7 @@ export class ImageUploadComponent implements OnInit {
   user: firebase.User;
   selectedFiles: FileList;
   currentUpload: Upload;
-  userInfo: Array<any>;
-  usertype: any;
+  @Input() isDLPhoto = false;
   constructor(public authService: AuthService,
               public us: UserServiceService,
               public upSvc: UploadService) { }
@@ -35,7 +34,11 @@ export class ImageUploadComponent implements OnInit {
   uploadSingle() {
     const file = this.selectedFiles.item(0);
     this.currentUpload = new Upload(file);
-    this.upSvc.pushUpload(this.currentUpload, this.user.uid);
+    if (this.isDLPhoto) {
+      this.upSvc.pushDLUpload(this.currentUpload, this.user.uid);
+    } else {
+      this.upSvc.pushUpload(this.currentUpload, this.user.uid);
+    }
   }
 
 
